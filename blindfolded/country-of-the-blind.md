@@ -4,8 +4,6 @@ categories: [Blindfolded]
 order: 1
 ---
 
-# The Country of The Blind
-
 @{lead} Long ago, a hiker lost his footing and tumbled down a mountainside, landing in a hidden valley. Centuries before, a powerful earthquake had sealed this valley off from the rest of the world with massive rocks. While outsiders believed the inhabitants had perished, the truth was quite the opposite—they survived and even flourished in their secluded haven.
 
 Not long after the earthquake, a genetic eye disease began to spread through the isolated community. Over time, it rendered each new generation blind from birth. Facing an uncertain future, the elders of the valley dedicated themselves to crafting ingenious methods to adapt and thrive in a world devoid of sight. As centuries passed, the memory of sight itself faded into myth, and the community came to believe that blindness was the natural order of life.
