@@ -1,6 +1,9 @@
 project:
   type: website
 
+filters:
+  - filters/unblindfold.lua
+
 website:
   title: "Unblindfold"
   description: "Un-blindfold the blindfolded via a rational Quranic approach"
