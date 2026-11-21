@@ -40,6 +40,15 @@ body {
   letter-spacing: normal !important;
 }
 
+.lead-para {
+  font-size: 1.24rem;
+  line-height: 1.75;
+  color: #334155;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
 /* ==========================================================================
    4. Explicit Arabic Styling (Inline spans & RTL blocks)
    Usage: [كلمات عربية]{lang=ar}  OR  ::: {lang=ar dir=rtl}
