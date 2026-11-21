@@ -60,6 +60,7 @@ format:
 #    documentclass: scrartcl
 #    toc: true
   typst:
+    include-in-header: typst-show.typ
     toc: true
     margin:
       x: 1in
