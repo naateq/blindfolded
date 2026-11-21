@@ -1,0 +1,193 @@
+/* ==========================================================================
+   1. Google Fonts Import (Latin + Arabic Naskh + Urdu Nastaliq)
+   ========================================================================== */
+@import url('https://googleapis.com');
+
+/* ==========================================================================
+   2. Automatic Inline Arabic Scaling (Zero Markup Required)
+   Automatically detects Arabic Unicode blocks inside English sentences,
+   applies Amiri, and scales size by 132% to match English x-height.
+   ========================================================================== */
+@font-face {
+  font-family: 'AutoArabicScale';
+  src: local('Amiri'), local('Scheherazade New'), local('Traditional Arabic');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+  size-adjust: 132%;
+  ascent-override: 105%;
+  descent-override: 35%;
+}
+
+/* ==========================================================================
+   3. Base Typography (Desktop & Mobile)
+   ========================================================================== */
+:root {
+  --font-english: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-arabic: 'Amiri', 'Traditional Arabic', serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+}
+
+body {
+  font-family: 'AutoArabicScale', var(--font-english);
+  font-size: 1.125rem; /* 18px base for serious long-form reading */
+  line-height: 1.75;
+  color: #1f2328;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent faux italics & tight letter-spacing on Arabic/Urdu scripts */
+:lang(ar), :lang(ur), [dir="rtl"] {
+  font-style: normal !important;
+  letter-spacing: normal !important;
+}
+
+/* ==========================================================================
+   4. Explicit Arabic Styling (Inline spans & RTL blocks)
+   Usage: [كلمات عربية]{lang=ar}  OR  ::: {lang=ar dir=rtl}
+   ========================================================================== */
+:lang(ar) {
+  font-family: var(--font-arabic);
+  font-size: 1.32em;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+div:lang(ar), p:lang(ar), blockquote:lang(ar) {
+  direction: rtl;
+  text-align: right;
+  font-size: 1.42em;
+  line-height: 2.1;
+  margin: 1.25rem 0;
+  padding: 0.75rem 1.25rem;
+  border-right: 3px solid #2c5282;
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   5. Explicit Urdu Styling (Nastaliq requires taller line-height)
+   Usage: [اردو متن]{lang=ur}  OR  ::: {lang=ur dir=rtl}
+   ========================================================================== */
+:lang(ur) {
+  font-family: var(--font-urdu);
+  font-size: 1.22em;
+  line-height: 2.35;
+}
+
+div:lang(ur), p:lang(ur), blockquote:lang(ur) {
+  direction: rtl;
+  text-align: right;
+  font-size: 1.3em;
+  line-height: 2.55;
+  margin: 1.25rem 0;
+  padding: 0.85rem 1.25rem;
+  border-right: 3px solid #2b6cb0;
+  background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   6. Mobile Responsiveness (Screens under 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  div:lang(ar), p:lang(ar), blockquote:lang(ar) {
+    font-size: 1.3em;
+    padding: 0.6rem 0.9rem;
+  }
+
+  div:lang(ur), p:lang(ur), blockquote:lang(ur) {
+    font-size: 1.2em;
+    line-height: 2.45;
+    padding: 0.7rem 0.9rem;
+
+/* ==========================================================================
+   7. Custom Unblindfold Quranic & Annotation Styles
+   ========================================================================== */
+.q-trans-en {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1.25rem;
+  border-left: 4px solid #2c5282;
+  background-color: #f8fafc;
+  border-radius: 0 6px 6px 0;
+  font-style: normal;
+}
+
+.q-trans-en p {
+  margin: 0;
+}
+
+.q-ref {
+  display: inline-block;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: #2c5282;
+  background-color: #ebf4ff;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  margin-left: 0.25em;
+  vertical-align: baseline;
+}
+
+.qxp {
+  color: #57606a;
+  font-size: 0.92em;
+  font-style: italic;
+}
+
+.quote-maroon {
+  margin: 1.4rem 0;
+  padding: 0.85rem 1.25rem;
+  border-left: 4px solid #800020;
+  background-color: #fdf6f8;
+  color: #5c0017;
+  font-weight: 600;
+}
+
+.text-maroon {
+  color: #800020;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   8. Poetry, RTL Blocks & Amber Callouts
+   ========================================================================== */
+.rtl-block {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-urdu);
+  font-size: 1.32em;
+  line-height: 2.5;
+  margin: 1.25rem 0 0.5rem 0;
+  padding: 0.85rem 1.25rem;
+  border-right: 4px solid #b45309;
+  background-color: #fffbeb;
+  border-radius: 6px 0 0 6px;
+}
+
+.callout-amber {
+  margin: 1.1rem 0;
+  padding: 0.9rem 1.25rem;
+  border-left: 4px solid #d97706;
+  background-color: #fffbeb;
+  color: #78350f;
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-english);
+  line-height: 1.75;
+}
+
+.poetry-trans {
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.text-amber {
+  color: #b45309;
+  font-weight: 600;
+}
+
+
+  }
+}
