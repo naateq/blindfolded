@@ -101,5 +101,55 @@ div:lang(ur), p:lang(ur), blockquote:lang(ur) {
     font-size: 1.2em;
     line-height: 2.45;
     padding: 0.7rem 0.9rem;
+
+/* ==========================================================================
+   7. Custom Unblindfold Quranic & Annotation Styles
+   ========================================================================== */
+.q-trans-en {
+  margin: 1.25rem 0;
+  padding: 0.85rem 1.25rem;
+  border-left: 4px solid #2c5282;
+  background-color: #f8fafc;
+  border-radius: 0 6px 6px 0;
+  font-style: normal;
+}
+
+.q-trans-en p {
+  margin: 0;
+}
+
+.q-ref {
+  display: inline-block;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: #2c5282;
+  background-color: #ebf4ff;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  margin-left: 0.25em;
+  vertical-align: baseline;
+}
+
+.qxp {
+  color: #57606a;
+  font-size: 0.92em;
+  font-style: italic;
+}
+
+.quote-maroon {
+  margin: 1.4rem 0;
+  padding: 0.85rem 1.25rem;
+  border-left: 4px solid #800020;
+  background-color: #fdf6f8;
+  color: #5c0017;
+  font-weight: 600;
+}
+
+.text-maroon {
+  color: #800020;
+  font-weight: 700;
+}
+
   }
 }
