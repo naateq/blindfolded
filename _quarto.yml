@@ -15,26 +15,26 @@ website:
         text: Home
       - text: "Topics"
         menu:
-          - text: "Concept of God"
-            href: gods/unpredictable-world.md
           - text: "Blindfolded"
             href: blindfolded/country-of-the-blind.md
+          - text: "Concept of God"
+            href: gods/unpredictable-world.md
 
   sidebar:
     style: "docked"
     search: true
     contents:
+      - section: "Blindfolded"
+        contents:
+          - blindfolded/country-of-the-blind.md
+          - blindfolded/inherited-religion.md
+          - blindfolded/intellectual-blindness.md
       - section: "Concept of God"
         contents:
           - gods/unpredictable-world.md
           - gods/god-of-miracles.md
           - gods/no-miracles.md
           - gods/Quranic-God.md
-      - section: "Blindfolded"
-        contents:
-          - blindfolded/country-of-the-blind.md
-          - blindfolded/inherited-religion.md
-          - blindfolded/intellectual-blindness.md
 
 format:
   html:
