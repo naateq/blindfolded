@@ -5,6 +5,7 @@ listing:
   contents:
     - "blindfolded/*.md"
     - "gods/*.md"
+    - "reflect/*.md"
   type: default
   categories: true
   sort: "order"
