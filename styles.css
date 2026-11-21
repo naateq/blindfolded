@@ -151,5 +151,43 @@ div:lang(ur), p:lang(ur), blockquote:lang(ur) {
   font-weight: 700;
 }
 
+/* ==========================================================================
+   8. Poetry, RTL Blocks & Amber Callouts
+   ========================================================================== */
+.rtl-block {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-urdu);
+  font-size: 1.32em;
+  line-height: 2.5;
+  margin: 1.25rem 0 0.5rem 0;
+  padding: 0.85rem 1.25rem;
+  border-right: 4px solid #b45309;
+  background-color: #fffbeb;
+  border-radius: 6px 0 0 6px;
+}
+
+.callout-amber {
+  margin: 1.1rem 0;
+  padding: 0.9rem 1.25rem;
+  border-left: 4px solid #d97706;
+  background-color: #fffbeb;
+  color: #78350f;
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-english);
+  line-height: 1.75;
+}
+
+.poetry-trans {
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+.text-amber {
+  color: #b45309;
+  font-weight: 600;
+}
+
+
   }
 }
