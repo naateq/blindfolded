@@ -1,0 +1,14 @@
+---
+title: "Unblindfold"
+subtitle: "Un-blindfold the blindfolded via a rational Quranic approach"
+listing:
+  contents:
+    - "gods/*.md"
+    - "blindfolded/*.md"
+  type: default
+  categories: true
+  sort: "order"
+  fields: [title, subtitle, categories, reading-time]
+---
+
+Welcome to **unblindfold.com**. Select a topic from the sidebar to read sequentially, or browse all articles below.
