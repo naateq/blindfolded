@@ -1,46 +1,53 @@
 -- filters/unblindfold.lua
--- Intercepts Pandoc Cite (@lead, @q-trans-en, @ref) and custom @{...} syntax
+-- Properly 1-indexed Pandoc AST filter for unblindfold.com custom syntax
 
--- 1. Convert inline @ref{...}, @{qxp|...}@, @{maroon|...}@, @{color-amber|...}@
-function Cite(el)
-  local id = el.citations and el.citations.id or ""
+-- 1. Walk a list of inlines to merge "@ref" + "{Quran 35:19-22}" and handle @{qxp|...}@
+local function transform_inlines(inlines)
+  local out = pandoc.List()
+  local i = 1
 
-  -- Handle @ref{Quran 35:19-22} -> Pandoc parses @ref + suffix {Quran 35:19-22}
-  if id == "ref" then
-    local suffix_text = pandoc.utils.stringify(el.content)
-    -- Extract text inside { ... } if present
-    local ref_label = suffix_text:match("^{(.-)}") or suffix_text:gsub("^@ref", "")
-    ref_label = ref_label:gsub("^{", ""):gsub("}$", "")
-    if ref_label ~= "" then
-      return pandoc.Span({pandoc.Str("[" .. ref_label .. "]")}, pandoc.Attr("", {"q-ref"}))
-    end
-  end
-end
+  while i <= #inlines do
+    local item = inlines[i]
 
--- Helper: Check if a paragraph starts with @lead, @q-trans-en, or @quote
-local function check_prefix_cite(inlines)
-  if #inlines == 0 then return nil, inlines end
-  local first = inlines
-
-  if first.t == "Cite" and first.citations and #first.citations > 0 then
-    local id = first.citations.id
-    if id == "lead" or id == "q-trans-en" or id == "rtl" or id == "rtl-ur" or id == "color-amber" then
-      local rest = pandoc.List()
-      for i = 2, #inlines do
-        -- Skip leading Space right after the tag
-        if not (i == 2 and inlines[i].t == "Space") then
-          rest:insert(inlines[i])
+    -- Check for @ref followed by {Citation Text}
+    if item.t == "Cite" and item.citations and #item.citations > 0 and item.citations[1].id == "ref" then
+      -- Collect following tokens until closing "}"
+      if i + 1 <= #inlines and inlines[i + 1].t == "Str" and inlines[i + 1].text:match("^{") then
+        local buf = {}
+        local j = i + 1
+        local found_end = false
+        while j <= #inlines do
+          local tok = inlines[j]
+          local s = pandoc.utils.stringify(tok)
+          table.insert(buf, s)
+          if tok.t == "Str" and tok.text:match("}$") then
+            found_end = true
+            break
+          end
+          j = j + 1
         end
+
+        if found_end then
+          local full = table.concat(buf, "")
+          full = full:gsub("^{", ""):gsub("}$", "")
+          out:insert(pandoc.Span({pandoc.Str("[" .. full .. "]")}, pandoc.Attr("", {"q-ref"})))
+          i = j + 1
+        else
+          out:insert(item)
+          i = i + 1
+        end
+      else
+        out:insert(item)
+        i = i + 1
       end
-      return id, rest
+    else
+      out:insert(item)
+      i = i + 1
     end
   end
-  return nil, inlines
-end
 
--- Helper: Replace inline @{qxp|...}@, @{maroon|...}@, @{color-amber|...}@ inside Str tokens
-local function transform_inline_braces(inlines)
-  local md = pandoc.write(pandoc.Pandoc({pandoc.Plain(inlines)}), "markdown")
+  -- Second pass: handle @{qxp|...}@, @{maroon|...}@, @{color-amber|...}@ via markdown roundtrip
+  local md = pandoc.write(pandoc.Pandoc({pandoc.Plain(out)}), "markdown")
   local changed = false
 
   if md:match("@{qxp|") then
@@ -58,17 +65,53 @@ local function transform_inline_braces(inlines)
 
   if changed then
     local parsed = pandoc.read(md, "markdown")
-    if parsed.blocks and parsed.blocks.content then
-      return parsed.blocks.content
+    if parsed.blocks and #parsed.blocks > 0 and parsed.blocks[1].content then
+      return parsed.blocks[1].content
     end
   end
-  return inlines
+
+  return out
 end
 
--- 2. Handle Paragraphs starting with @lead, @q-trans-en, etc.
+-- 2. Check if the first inline element of a paragraph is a block-level @tag
+local function extract_leading_tag(inlines)
+  if #inlines == 0 then return nil, inlines end
+  local first = inlines[1]
+
+  -- Case A: Pandoc parsed @{lead} or @{q-trans-en} into a Cite element
+  if first.t == "Cite" and first.citations and #first.citations > 0 then
+    local id = first.citations[1].id
+    if id == "lead" or id == "q-trans-en" or id == "rtl" or id == "rtl-ur" or id == "color-amber" then
+      local rest = pandoc.List()
+      for idx = 2, #inlines do
+        if not (idx == 2 and inlines[idx].t == "Space") then
+          rest:insert(inlines[idx])
+        end
+      end
+      return id, rest
+    end
+  end
+
+  -- Case B: Pandoc kept @{quote maroon} as Str("@{quote") + Space + Str("maroon}")
+  if first.t == "Str" and first.text == "@{quote" and #inlines >= 3 then
+    if inlines[2].t == "Space" and inlines[3].t == "Str" and inlines[3].text == "maroon}" then
+      local rest = pandoc.List()
+      for idx = 4, #inlines do
+        if not (idx == 4 and inlines[idx].t == "Space") then
+          rest:insert(inlines[idx])
+        end
+      end
+      return "quote-maroon", rest
+    end
+  end
+
+  return nil, inlines
+end
+
+-- 3. Process Paragraphs
 function Para(el)
-  local tag, rest = check_prefix_cite(el.content)
-  rest = transform_inline_braces(rest)
+  local tag, rest = extract_leading_tag(el.content)
+  rest = transform_inlines(rest)
 
   if tag == "lead" then
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"lead-para"}))
@@ -76,20 +119,22 @@ function Para(el)
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"q-trans-en"}))
   elseif tag == "color-amber" then
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"callout-amber"}))
+  elseif tag == "quote-maroon" then
+    return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"quote-maroon"}))
   else
     return pandoc.Para(rest)
   end
 end
 
--- 3. Handle BlockQuotes starting with > @{q-trans-en}, > @{rtl}, > @{rtl-ur}, > @{color-amber}
+-- 4. Process BlockQuotes (> @{q-trans-en}, > @{rtl}, > @{rtl-ur}, > @{color-amber})
 function BlockQuote(el)
-  if #el.content > 0 and el.content.t == "Para" then
-    local tag, rest = check_prefix_cite(el.content.content)
-    rest = transform_inline_braces(rest)
+  if #el.content > 0 and el.content[1].t == "Para" then
+    local tag, rest = extract_leading_tag(el.content[1].content)
+    rest = transform_inlines(rest)
 
     local new_blocks = pandoc.List({pandoc.Para(rest)})
-    for i = 2, #el.content do
-      new_blocks:insert(el.content[i])
+    for idx = 2, #el.content do
+      new_blocks:insert(el.content[idx])
     end
 
     if tag == "q-trans-en" then
@@ -100,11 +145,13 @@ function BlockQuote(el)
       return pandoc.Div(new_blocks, pandoc.Attr("", {"rtl-block"}, {dir = "rtl"}))
     elseif tag == "color-amber" then
       return pandoc.Div(new_blocks, pandoc.Attr("", {"callout-amber"}))
+    elseif tag == "quote-maroon" then
+      return pandoc.Div(new_blocks, pandoc.Attr("", {"quote-maroon"}))
     end
   end
 end
 
--- 4. Handle fenced code blocks starting with @{color-amber}
+-- 5. Process fenced code blocks starting with @{color-amber}
 function CodeBlock(el)
   if el.text:match("^@{color%-amber}") then
     local clean = el.text:gsub("^@{color%-amber}%s*", "")
