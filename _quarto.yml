@@ -59,8 +59,10 @@ format:
 #  pdf:
 #    documentclass: scrartcl
 #    toc: true
-#  typst:
-#    toc: true
-#    mainfont: "Source Serif 4"
+  typst:
+    toc: true
+    margin:
+      x: 1in
+      y: 1in
   epub:
     toc: true
