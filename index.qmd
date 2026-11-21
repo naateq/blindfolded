@@ -3,8 +3,8 @@ title: "Unblindfold"
 subtitle: "Un-blindfold the blindfolded via a rational Quranic approach"
 listing:
   contents:
-    - "gods/*.md"
     - "blindfolded/*.md"
+    - "gods/*.md"
   type: default
   categories: true
   sort: "order"
