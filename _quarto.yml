@@ -40,9 +40,9 @@ website:
           - gods/god-of-miracles.md
           - gods/no-miracles.md
           - gods/Quranic-God.md
-     - section: "Reflect"
-       contents:
-         - reflect/critique-of-reason.md
+      - section: "Reflect"
+        contents:
+          - reflect/critique-of-reason.md
 
 format:
   html:
