@@ -1,0 +1,50 @@
+project:
+  type: website
+
+website:
+  title: "Unblindfold"
+  description: "Un-blindfold the blindfolded via a rational Quranic approach"
+  site-url: "https://unblindfold.com"
+  repo-url: "https://github.com"
+  repo-actions: [edit, source]
+  page-navigation: true   # Adds Next / Previous buttons at bottom of articles
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: "Topics"
+        menu:
+          - text: "Concept of God"
+            href: gods/unpredictable-world.md
+          - text: "Blindfolded"
+            href: blindfolded/country-of-the-blind.md
+
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Concept of God"
+        contents:
+          - gods/unpredictable-world.md
+          - gods/god-of-miracles.md
+          - gods/no-miracles.md
+          - gods/Quranic-God.md
+      - section: "Blindfolded"
+        contents:
+          - blindfolded/country-of-the-blind.md
+          - blindfolded/inherited-religion.md
+          - blindfolded/intellectual-blindness.md
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    fontsize: 1.1rem
+    linestretch: 1.7
+  pdf:
+    documentclass: scrartcl
+    toc: true
+  epub:
+    toc: true
