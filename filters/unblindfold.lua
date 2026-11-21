@@ -87,10 +87,10 @@ local function extract_leading_tag(inlines)
   if #inlines == 0 then return nil, inlines end
   local first = inlines[1]
 
-  -- Case A: Pandoc parsed @{lead} or @{q-trans-en} into a Cite element
+  -- Case A: Pandoc parsed @{lead}, @{q-trans-en}, @{maroon}, etc. into a Cite element
   if first.t == "Cite" and first.citations and #first.citations > 0 then
     local id = first.citations[1].id
-    if id == "lead" or id == "q-trans-en" or id == "rtl" or id == "rtl-ur" or id == "color-amber" then
+    if id == "lead" or id == "q-trans-en" or id == "rtl" or id == "rtl-ur" or id == "color-amber" or id == "amber" or id == "maroon" then
       local rest = pandoc.List()
       for idx = 2, #inlines do
         if not (idx == 2 and inlines[idx].t == "Space") then
@@ -126,16 +126,16 @@ function Para(el)
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"lead-para"}))
   elseif tag == "q-trans-en" then
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"q-trans-en"}))
-  elseif tag == "color-amber" then
+  elseif tag == "color-amber" or tag == "amber" then
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"callout-amber"}))
-  elseif tag == "quote-maroon" then
+  elseif tag == "quote-maroon" or tag == "maroon" then
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"quote-maroon"}))
   else
     return pandoc.Para(rest)
   end
 end
 
--- 4. Process BlockQuotes (> @{q-trans-en}, > @{rtl}, > @{rtl-ur}, > @{color-amber})
+-- 4. Process BlockQuotes (> @{q-trans-en}, > @{rtl}, > @{rtl-ur}, > @{color-amber}, > @{maroon})
 function BlockQuote(el)
   if #el.content > 0 and el.content[1].t == "Para" then
     local tag, rest = extract_leading_tag(el.content[1].content)
@@ -152,9 +152,9 @@ function BlockQuote(el)
       return pandoc.Div(new_blocks, pandoc.Attr("", {"rtl-block"}, {lang = "ur", dir = "rtl"}))
     elseif tag == "rtl" then
       return pandoc.Div(new_blocks, pandoc.Attr("", {"rtl-block"}, {dir = "rtl"}))
-    elseif tag == "color-amber" then
+    elseif tag == "color-amber" or tag == "amber" then
       return pandoc.Div(new_blocks, pandoc.Attr("", {"callout-amber"}))
-    elseif tag == "quote-maroon" then
+    elseif tag == "quote-maroon" or tag == "maroon" then
       return pandoc.Div(new_blocks, pandoc.Attr("", {"quote-maroon"}))
     end
   end
