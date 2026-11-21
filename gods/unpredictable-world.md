@@ -4,7 +4,6 @@ categories: [Concept of God]
 order: 1
 ---
 
-# Unpredictable World
 
 The question of where we come from is complex and multi-faceted. To truly understand the origins of humanity, we would need a time machine to take us back to the very beginning of everything. In my imagination, I stumbled upon such a device.
 
