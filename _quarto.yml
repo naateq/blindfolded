@@ -22,6 +22,8 @@ website:
             href: blindfolded/country-of-the-blind.md
           - text: "Concept of God"
             href: gods/unpredictable-world.md
+          - text: "Reflect"
+            href: reflect/critique-of-reason.md
 
   sidebar:
     style: "docked"
@@ -38,6 +40,9 @@ website:
           - gods/god-of-miracles.md
           - gods/no-miracles.md
           - gods/Quranic-God.md
+     - section: "Reflect"
+       contents:
+         - reflect/critique-of-reason.md
 
 format:
   html:
