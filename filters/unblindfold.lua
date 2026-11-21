@@ -73,6 +73,15 @@ local function transform_inlines(inlines)
   return out
 end
 
+-- Handle @ref{...} when nested inside square brackets [...]
+function Cite(el)
+  local raw = pandoc.utils.stringify(el)
+  if raw:match("@ref{.-}") then
+    local replaced = raw:gsub("@ref{(.-)}", "[%1]")
+    return pandoc.Span({pandoc.Str(replaced)}, pandoc.Attr("", {"q-ref"}))
+  end
+end
+
 -- 2. Check if the first inline element of a paragraph is a block-level @tag
 local function extract_leading_tag(inlines)
   if #inlines == 0 then return nil, inlines end
