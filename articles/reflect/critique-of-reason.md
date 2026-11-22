@@ -1,18 +1,10 @@
 ---
-title: "al-Ghazali — The intellect slayer"
+title: "Al-Ghazali — The intellect slayer"
 categories: [Reflect]
 order: 3
 ---
 
-Throughout the Quranic text, numerous verses emphasize the central role of human intellect as an indispensable key to:
-
-- Comprehend Divine Signs (Ayaat) and decode their deeper meanings,
-- Walk the Path of the Prophet through deliberate, reason-based practice,
-- Dismantle Deceptive Arguments and resist dogmatic traps,
-- Avert Spiritual Ruin and escape the self-inflicted torment of Hellfire, and
-- Elevate Human Dignity above the unreflective impulses of animal instinct.
-
-Before turning to the critique of reason, it is worth stepping back into history to observe the extraordinary impact of reason-based governance—even during eras when autocratic rulers strayed from the foundational spirit of the original message.
+Before turning to the critique of reason, it is worth stepping back into history to observe the extraordinary impact of reason-based governance — even during eras when autocratic rulers strayed from the foundational spirit of the original message.
 
 ## "Islamic Empire" and the Renaissance of Europe
 
@@ -43,7 +35,7 @@ The visionary philosopher and poet Allama Muhammad Iqbal (1877–1938) powerfull
 >@{color-amber} How heartbreaking! Our prized scientific heritage was lost—  
 >@{color-amber} Worse still, even the consciousness of that loss has vanished from our collective memory.
 
-## Al-Ghazali — The Intellect Slayer
+## Al-Ghazali
 
 A decisive turning point occurred with the influential theologian Al-Ghazali [1058 – 1111 A.D]. In his landmark critique, *'Tahafat-ul-Filasafa*'_ [ تہافت الفلاسفة ] — 'The Incoherence of the Scientists', he mounted a fierce intellectual assault on the rationalist methodology of the polymaths. Many historians argue that this critique marked the beginning of the end for open scientific inquiry across the Muslim world — a dynamic echoing modern debates (in Europe and the United States) where dogmatic movements challenge scientific consensus and empirical methods.
 
