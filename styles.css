@@ -47,6 +47,10 @@ main p {
     max-width: 100%;
     padding: 0.85rem 1.25rem;
   }
+  .poetry-trans {
+    max-width: 100%;
+    padding: 0.75rem 1.25rem;
+  }
 }
 
 /* Prevent faux italics on Arabic/Urdu */
@@ -229,6 +233,36 @@ main p {
   font-style: italic;
 }
 
+/* Reusable centering utility for any English prose or callout */
+.center,
+.center p,
+.center .line-block {
+  text-align: center !important;
+}
+
+/* Centered cell for English translations of Urdu poetry */
+.poetry-trans {
+  font-style: italic;
+  color: var(--amber);
+  text-align: center;
+
+  width: fit-content;
+  max-width: 85%;
+  margin: 0.25rem auto 1.5rem auto;
+  padding: 0.75rem 1.75rem;
+
+  background-color: #fffbeb;
+  border-left: 3px solid var(--amber);
+  border-right: 3px solid var(--amber);
+  border-radius: 6px;
+}
+
+.poetry-trans p,
+.poetry-trans .line-block {
+  margin: 0;
+  text-align: center !important;
+}
+
 .indent-block {
   padding-left: 1.25rem;
 }
@@ -312,6 +346,13 @@ body.quarto-dark .rtl-block p,
 body.quarto-dark .rtl-ur-poetry,
 body.quarto-dark .rtl-ur-poetry p,
 body.quarto-dark .rtl-ur-poetry .line-block {
+  color: #cccc99;
+  background-color: #292112;
+  border-color: #d97706;
+}
+body.quarto-dark .poetry-trans,
+body.quarto-dark .poetry-trans p,
+body.quarto-dark .poetry-trans .line-block {
   color: #cccc99;
   background-color: #292112;
   border-color: #d97706;
