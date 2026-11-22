@@ -1,5 +1,5 @@
 ---
-title: "An Unpredictable World"
+title: "An unpredictable world"
 categories: [Concept of God]
 order: 1
 ---

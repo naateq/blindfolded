@@ -1,5 +1,5 @@
 ---
-title: "So What!"
+title: "So what!"
 categories: [atheism]
 order: 3
 ---

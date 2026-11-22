@@ -1,5 +1,5 @@
 ---
-title: "Inherited Religion"
+title: "Inherited religion"
 categories: [Blindfolded]
 order: 2
 ---

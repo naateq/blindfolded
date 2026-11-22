@@ -1,5 +1,5 @@
 ---
-title: "The God of Miracles"
+title: "A God of miracles"
 categories: [Concept of God]
 order: 2
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Objections and Questions"
+title: "Objections"
 categories: [atheism]
 order: 2
 ---

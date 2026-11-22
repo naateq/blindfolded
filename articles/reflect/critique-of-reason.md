@@ -1,5 +1,5 @@
 ---
-title: "A Critique of Intellect"
+title: "A critique of intellect"
 categories: [Reflect]
 order: 2
 ---

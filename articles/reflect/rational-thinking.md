@@ -1,5 +1,5 @@
 ---
-title: "Rational Thinking"
+title: "Rational thinking"
 categories: [Reflect]
 order: 3
 ---

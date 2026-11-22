@@ -1,5 +1,5 @@
 ---
-title: "Country of the Blind"
+title: "Country of the blind"
 categories: [Blindfolded]
 order: 1
 ---

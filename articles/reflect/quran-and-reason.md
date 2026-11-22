@@ -1,5 +1,5 @@
 ---
-title: "The Quran - Reason-based Message"
+title: "The Quran & reason"
 categories: [Reflect]
 order: 1
 ---

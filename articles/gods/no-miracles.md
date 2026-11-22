@@ -1,5 +1,5 @@
 ---
-title: "A world with no miracles"
+title: "No miracles"
 categories: [Concept of God]
 order: 3
 ---

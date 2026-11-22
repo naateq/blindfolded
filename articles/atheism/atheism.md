@@ -1,5 +1,5 @@
 ---
-title: "Atheism - A Rational Approach to A-theism"
+title: "Atheism"
 categories: [atheism]
 order: 1
 ---

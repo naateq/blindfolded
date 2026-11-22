@@ -1,5 +1,5 @@
 ---
-title: "Intellectual Blindness"
+title: "Intellectual blindness"
 categories: [Blindfolded]
 order: 3
 ---
