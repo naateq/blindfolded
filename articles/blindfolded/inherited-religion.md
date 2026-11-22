@@ -4,8 +4,6 @@ categories: [Blindfolded]
 order: 2
 ---
 
-# Inherited Religion
-
 Across the globe, humanity's beliefs span a vast and fascinating spectrum:
 
 - Over a billion Hindus find deep spiritual connection through stone idols.

@@ -4,8 +4,6 @@ categories: [Concept of God]
 order: 3
 ---
 
-# A world with no miracles
-
 @{lead} Science believes in the assumption that the universe has always followed natural laws and continues to follow these laws. But this is only an assumption.
 
 There is no proof that the natural laws were the same a few million years ago or they will remain the same tomorrow. All things in the universe might have recently come into the current configuration giving a false impression as if things have always worked the same way.

@@ -4,7 +4,6 @@ categories: [Concept of God]
 order: 1
 ---
 
-
 The question of where we come from is complex and multi-faceted. To truly understand the origins of humanity, we would need a time machine to take us back to the very beginning of everything. In my imagination, I stumbled upon such a device.
 
 The time machine transported me to a world I call the "Puniverse"—a term I coined to represent the pre-Big Bang universe. This world was eerily similar to our own, complete with a sun, moon, stars, and earth. However, upon closer inspection, I began to notice peculiarities that I couldn't quite comprehend.

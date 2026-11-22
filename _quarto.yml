@@ -5,11 +5,11 @@ filters:
   - filters/unblindfold.lua
 
 website:
-  title: "Unblindfold"
-  description: "Un-blindfold the blindfolded via a rational Quranic approach"
+  title: "UnBlindfold.com"
+  description: "Un-blindfold the blindfolded via a rational Quranic approach."
   site-url: "https://unblindfold.com"
-  repo-url: "https://github.com/naateq"
-  repo-actions: [edit, source]
+  repo-url: "https://github.com/naateq/blindfolded"
+  repo-actions: false
   page-navigation: true
 
   navbar:
@@ -20,6 +20,8 @@ website:
         menu:
           - text: "Blindfolded"
             href: articles/blindfolded/country-of-the-blind.md
+          - text: "Atheism"
+            href: articles/atheism/atheism.md
           - text: "Concept of God"
             href: articles/gods/unpredictable-world.md
           - text: "Reflect"
@@ -34,6 +36,11 @@ website:
           - articles/blindfolded/country-of-the-blind.md
           - articles/blindfolded/inherited-religion.md
           - articles/blindfolded/intellectual-blindness.md
+      - section: "Atheism"
+        contents:
+          - articles/atheism/atheism.md
+          - articles/atheism/objections.md
+          - articles/atheism/sowhat.md
       - section: "Concept of God"
         contents:
           - articles/gods/unpredictable-world.md
@@ -43,6 +50,8 @@ website:
       - section: "Reflect"
         contents:
           - articles/reflect/critique-of-reason.md
+          - articles/reflect/quran-and-reason.md
+          - articles/reflect/rational-thinking.md
 
 format:
   html:

@@ -4,8 +4,6 @@ categories: [Concept of God]
 order: 2
 ---
 
-# The God of Miracles
-
 What is a miracle? It is an event that violates natural laws — such as a person walking on water without sinking, or emerging from a fire unscathed. If a natural cause can be found for the event, it cannot be considered a miracle. For instance, if a person walks on a water surface that is frozen to ice, it is not a miracle; it's simply the result of natural laws.
 
 Now, take a moment to reflect on the following questions:

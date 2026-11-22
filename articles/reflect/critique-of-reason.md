@@ -1,10 +1,10 @@
 ---
 title: "A Critique of Intellect"
 categories: [Reflect]
-order: 1
+order: 2
 ---
 
-[Part 2](critique-of-reason-2.md) references more than 15 Quranic verses stressing the importance of intellect to:
+There are at least 15 Quranic verses stressing the importance of intellect to:
 
 - understand God's message [Ayaat],
 - follow the way of Muhammad [S],

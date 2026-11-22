@@ -4,8 +4,6 @@ categories: [Concept of God]
 order: 4
 ---
 
-# The Quranic God
-
 When God talks about Himself as a Being, He describes Himself as One, Unique, and Uncaused Cause, to Whom you find no comparison in the universe or in your imagination.
 
 > @{q-trans-en} Proclaim, "He is the God, (who is) One (and Unique). The God, (who is) Absolutely Independent (the Uncaused Cause.) He neither begets, nor is born. And there is none like Him." @ref{Quran 112:1-4}
