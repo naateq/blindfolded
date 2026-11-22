@@ -5,8 +5,8 @@ filters:
   - filters/unblindfold.lua
 
 website:
-  title: "UnBlindfold.com"
-  description: "Un-blindfold the blindfolded via a rational Quranic approach."
+  title: "unBlindfold"
+  description: "Un-blindfold the blindfolded via a rational Quranic approach"
   site-url: "https://unblindfold.com"
   repo-url: "https://github.com/naateq/blindfolded"
   repo-actions: none
@@ -14,8 +14,8 @@ website:
 
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+#      - href: index.qmd
+#        text: Home
       - text: "Topics"
         menu:
           - text: "Blindfolded"
@@ -30,6 +30,7 @@ website:
   sidebar:
     style: "docked"
     search: true
+    collapse-level: 1
     contents:
       - section: "Blindfolded"
         contents:

@@ -1,6 +1,4 @@
 ---
-title: "Unblindfold"
-subtitle: "Un-blindfold the blindfolded via a rational Quranic approach"
 listing:
   - id: blindfolded
     contents: "articles/blindfolded/*.md"
