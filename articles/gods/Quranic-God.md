@@ -38,7 +38,7 @@ God is so uncompromising in His decisions, He does not deviate a bit, let alone 
 
 God has created unwavering rules not only for the physical, but for the human life (_Nafs_ / "soul") and social life as well.
 
-@{q-trans-en} That was the _Sunnah_ @{qxp| (behavior, laws) }@ of God among those who lived before. And never will you find any change in God's _Sunnah_ @{qxp| (behavior, laws). @ref{Quran 33:62}
+@{q-trans-en} That was the _Sunnah_ @{qxp| (behavior, laws) }@ of God among those who lived before. And never will you find any change in God's _Sunnah_ @{qxp| (behavior, laws) }@. @ref{Quran 33:62}
 
 Even a God's messenger has no power to change any of these rules.
 
