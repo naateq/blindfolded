@@ -20,7 +20,7 @@ The claim that "God cannot be scientifically proven" is not a sound argument but
 
 - Finally, science depends on logical laws such as the law of identity (for all x, x = x) and the law of non-contradiction (a proposition cannot be both true and false simultaneously). These principles are accepted as self-evident truths but cannot be scientifically validated.
 
-The existence of God has been demonstrated through logical and mathematical reasoning in [Part 1](/?Atheism&part=1), not mere blind faith. Recognizing the limits of scientific methods invites us to consider proofs and arguments beyond empirical evidence.
+The existence of God has been demonstrated through logical and mathematical reasoning in [Part 1](atheism.md), not mere blind faith. Recognizing the limits of scientific methods invites us to consider proofs and arguments beyond empirical evidence.
 
 > **Claim: Quantum physics shows particles come into existence out of nothingness**
 
@@ -48,7 +48,7 @@ Despite its remarkable advancements, science remains unable to answer certain fu
 
 Natural laws merely describe observed behaviors; they do not explain the underlying causes of those behaviors.
 
-By carefully reviewing the proof provided in [Part 1](/?Atheism&part=1), it becomes evident that the idea of an eternal or infinite existence of conditioned realities (like matter) is logically untenable. These conditioned realities must rely on an Uncaused Cause, usually termed as Yehweh, God, or Allah.
+By carefully reviewing the proof provided in [Part 1](atheism.md), it becomes evident that the idea of an eternal or infinite existence of conditioned realities (like matter) is logically untenable. These conditioned realities must rely on an Uncaused Cause, usually termed as Yehweh, God, or Allah.
 
 > **Claim: There is no proof for the existence of God**
 
