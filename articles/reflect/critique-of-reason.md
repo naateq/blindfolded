@@ -1,5 +1,5 @@
 ---
-title: "A critique of intellect"
+title: "al-Ghazali — The intellect slayer"
 categories: [Reflect]
 order: 3
 ---
