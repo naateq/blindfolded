@@ -55,10 +55,10 @@ main p {
   letter-spacing: normal !important;
 }
 
-/* Inline Arabic (:lang(ar)) */
+/* Inline Arabic (:lang(ar)) — rem prevents compounding on nested <p> */
 :lang(ar) {
   font-family: var(--font-arabic);
-  font-size: 1.3em;
+  font-size: 1.2rem;
   line-height: 1.9;
 }
 
@@ -67,11 +67,10 @@ main p {
   font-family: var(--font-arabic);
   direction: rtl;
   text-align: right;
-  font-size: 1.42em;
+  font-size: 1.35rem;
   line-height: 2.1;
   color: var(--dark-blue);
 
-  /* Centered cell sizing */
   width: fit-content;
   max-width: 85%;
   margin: 1.5rem auto;
@@ -84,16 +83,17 @@ main p {
 
 .rtl-ar p {
   margin: 0;
+  font-size: inherit;
   direction: rtl;
   text-align: right !important;
 }
 
-/* Inline & Block Urdu (:lang(ur), @{rtl-ur}, or ::: {.rtl-ur}) */
+/* Inline & Block Urdu prose (:lang(ur), @{rtl-ur}, or ::: {.rtl-ur}) */
 :lang(ur), .rtl-ur, .rtl-block {
   font-family: var(--font-urdu);
   direction: rtl;
   text-align: right;
-  font-size: 1.25em;
+  font-size: 1.2rem;
   line-height: 2.5;
 }
 
@@ -105,9 +105,10 @@ main p {
   border-radius: 6px 0 0 6px;
 }
 
-/* Urdu prose (@{rtl-ur} or ::: {.rtl-ur}) — RTL, right-aligned */
+.rtl-block p,
 .rtl-ur p {
   margin: 0;
+  font-size: inherit;
   direction: rtl;
   text-align: right !important;
 }
@@ -117,7 +118,7 @@ main p {
   font-family: var(--font-urdu);
   direction: rtl;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.25rem;
   line-height: 2.6;
   color: var(--amber);
 
@@ -135,13 +136,9 @@ main p {
 .rtl-ur-poetry p,
 .rtl-ur-poetry .line-block {
   margin: 0;
+  font-size: inherit;
   direction: rtl;
   text-align: center !important;
-}
-
-.rtl-block p {
-  margin: 0;
-  text-align: right;
 }
 
 /* Lead paragraph */
@@ -289,14 +286,6 @@ body.quarto-dark .rtl-ar p {
   border-right-color: #3b82f6;
 }
 
-body.quarto-dark .rtl-ur-poetry,
-body.quarto-dark .rtl-ur-poetry p,
-body.quarto-dark .rtl-ur-poetry .line-block {
-  color: #cccc99;
-  background-color: #292112;
-  border-color: #d97706;
-}
-
 body.quarto-dark .q-ref {
   color: #fca5a5;
 }
@@ -319,7 +308,10 @@ body.quarto-dark .quote-maroon {
 body.quarto-dark .callout-amber,
 body.quarto-dark .callout-amber p,
 body.quarto-dark .rtl-block,
-body.quarto-dark .rtl-block p {
+body.quarto-dark .rtl-block p,
+body.quarto-dark .rtl-ur-poetry,
+body.quarto-dark .rtl-ur-poetry p,
+body.quarto-dark .rtl-ur-poetry .line-block {
   color: #cccc99;
   background-color: #292112;
   border-color: #d97706;
