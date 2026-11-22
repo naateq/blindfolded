@@ -8,9 +8,9 @@ website:
   title: "Unblindfold"
   description: "Un-blindfold the blindfolded via a rational Quranic approach"
   site-url: "https://unblindfold.com"
-  repo-url: "https://github.com"
+  repo-url: "https://github.com/naateq"
   repo-actions: [edit, source]
-  page-navigation: true   # Adds Next / Previous buttons at bottom of articles
+  page-navigation: true
 
   navbar:
     left:
@@ -19,11 +19,11 @@ website:
       - text: "Topics"
         menu:
           - text: "Blindfolded"
-            href: blindfolded/country-of-the-blind.md
+            href: articles/blindfolded/country-of-the-blind.md
           - text: "Concept of God"
-            href: gods/unpredictable-world.md
+            href: articles/gods/unpredictable-world.md
           - text: "Reflect"
-            href: reflect/critique-of-reason.md
+            href: articles/reflect/critique-of-reason.md
 
   sidebar:
     style: "docked"
@@ -31,18 +31,18 @@ website:
     contents:
       - section: "Blindfolded"
         contents:
-          - blindfolded/country-of-the-blind.md
-          - blindfolded/inherited-religion.md
-          - blindfolded/intellectual-blindness.md
+          - articles/blindfolded/country-of-the-blind.md
+          - articles/blindfolded/inherited-religion.md
+          - articles/blindfolded/intellectual-blindness.md
       - section: "Concept of God"
         contents:
-          - gods/unpredictable-world.md
-          - gods/god-of-miracles.md
-          - gods/no-miracles.md
-          - gods/Quranic-God.md
+          - articles/gods/unpredictable-world.md
+          - articles/gods/god-of-miracles.md
+          - articles/gods/no-miracles.md
+          - articles/gods/Quranic-God.md
       - section: "Reflect"
         contents:
-          - reflect/critique-of-reason.md
+          - articles/reflect/critique-of-reason.md
 
 format:
   html:
@@ -51,14 +51,9 @@ format:
     toc: true
     include-in-header:
       text: |
-        <link rel="preconnect" href="https://googleapis.com">
-        <link rel="preconnect" href="https://gstatic.com" crossorigin>
-        <link href="https://googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    fontsize: 1.1rem
-    linestretch: 1.7
-#  pdf:
-#    documentclass: scrartcl
-#    toc: true
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://googleapis.com" rel="stylesheet">
   typst:
     include-in-header: typst-show.typ
     toc: true

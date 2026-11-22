@@ -2,14 +2,48 @@
 title: "Unblindfold"
 subtitle: "Un-blindfold the blindfolded via a rational Quranic approach"
 listing:
-  contents:
-    - "blindfolded/*.md"
-    - "gods/*.md"
-    - "reflect/*.md"
-  type: default
-  categories: true
-  sort: "order"
-  fields: [title, subtitle, categories, reading-time]
+  - id: concept-of-god
+    contents: "articles/gods/*.md"
+    type: table
+    sort: "order"
+    fields: [title, reading-time]
+    field-display-names:
+      title: "Article"
+      reading-time: "Read Time"
+    filter-ui: false
+    sort-ui: false
+  - id: blindfolded
+    contents: "articles/blindfolded/*.md"
+    type: table
+    sort: "order"
+    fields: [title, reading-time]
+    field-display-names:
+      title: "Article"
+      reading-time: "Read Time"
+    filter-ui: false
+    sort-ui: false
+  - id: reflect
+    contents: "articles/reflect/*.md"
+    type: table
+    sort: "order"
+    fields: [title, reading-time]
+    field-display-names:
+      title: "Article"
+      reading-time: "Read Time"
+    filter-ui: false
+    sort-ui: false
 ---
 
-Welcome to **unblindfold.com**. Select a topic from the sidebar to read sequentially, or browse all articles below.
+Welcome to **unblindfold.com**. Explore the essays below in sequence by topic, or use the search bar at the top right to find specific subjects.
+
+## Concept of God
+:::{#concept-of-god}
+:::
+
+## Blindfolded
+:::{#blindfolded}
+:::
+
+## Reflect
+:::{#reflect}
+:::
