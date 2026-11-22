@@ -27,16 +27,20 @@ The visionary philosopher and poet Allama Muhammad Iqbal (1877–1938) powerfull
 | خشتِ بنيادِ كليسا بن گئی خاكِ حجاز
 :::
 
->@{color-amber} Europe inherited the intellectual legacy of the Muslim world,  
->@{color-amber} And upon it, built the foundations of its own ascendant empire.
+::: {.center}
+*Europe inherited the intellectual legacy of the Muslim world,*  
+*And upon it, built the foundations of its own ascendant empire.*
+:::
 
 ::: {.rtl-ur-poetry lang="ur" dir="rtl"}
 | واۓ ناکامی متاعِ کارواں جاتا رھا
 | کارواں کے دل سے احساس زیاں جاتا رھا
 :::
 
->@{color-amber} How heartbreaking! Our prized scientific heritage was lost—  
->@{color-amber} Worse still, even the consciousness of that loss has vanished from our collective memory.
+::: {.center}
+*How heartbreaking! Our prized scientific heritage was lost—*  
+*Worse still, even the consciousness of that loss has vanished from our collective memory.*
+:::
 
 ## Al-Ghazali
 
