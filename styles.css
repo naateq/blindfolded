@@ -40,6 +40,13 @@ main p {
   main p {
     text-align: left;
   }
+  .rtl-ar {
+    max-width: 100%;
+  }
+  .rtl-ur-poetry {
+    max-width: 100%;
+    padding: 0.85rem 1.25rem;
+  }
 }
 
 /* Prevent faux italics on Arabic/Urdu */
@@ -55,7 +62,7 @@ main p {
   line-height: 1.9;
 }
 
-/* Block Arabic (@{rtl-ar} or ::: {.rtl-ar}) */
+/* Block Arabic (@{rtl-ar} or ::: {.rtl-ar}) — centered cell, right-aligned text */
 .rtl-ar {
   font-family: var(--font-arabic);
   direction: rtl;
@@ -63,8 +70,13 @@ main p {
   font-size: 1.42em;
   line-height: 2.1;
   color: var(--dark-blue);
-  margin: 1.25rem 0;
-  padding: 0.85rem 1.25rem;
+
+  /* Centered cell sizing */
+  width: fit-content;
+  max-width: 85%;
+  margin: 1.5rem auto;
+  padding: 1rem 1.5rem;
+
   border-right: 4px solid var(--secondary-blue);
   background-color: #f8fafc;
   border-radius: 6px 0 0 6px;
@@ -72,7 +84,8 @@ main p {
 
 .rtl-ar p {
   margin: 0;
-  text-align: right;
+  direction: rtl;
+  text-align: right !important;
 }
 
 /* Inline & Block Urdu (:lang(ur), @{rtl-ur}, or ::: {.rtl-ur}) */
@@ -90,6 +103,40 @@ main p {
   border-right: 4px solid var(--amber);
   background-color: #fffbeb;
   border-radius: 6px 0 0 6px;
+}
+
+/* Urdu prose (@{rtl-ur} or ::: {.rtl-ur}) — RTL, right-aligned */
+.rtl-ur p {
+  margin: 0;
+  direction: rtl;
+  text-align: right !important;
+}
+
+/* Urdu poetry (@{rtl-ur-poetry} or ::: {.rtl-ur-poetry}) — centered cell, centered verses */
+.rtl-ur-poetry {
+  font-family: var(--font-urdu);
+  direction: rtl;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 2.6;
+  color: var(--amber);
+
+  width: fit-content;
+  max-width: 85%;
+  margin: 1.5rem auto 0.75rem auto;
+  padding: 1rem 2rem;
+
+  background-color: #fffbeb;
+  border-left: 3px solid var(--amber);
+  border-right: 3px solid var(--amber);
+  border-radius: 6px;
+}
+
+.rtl-ur-poetry p,
+.rtl-ur-poetry .line-block {
+  margin: 0;
+  direction: rtl;
+  text-align: center !important;
 }
 
 .rtl-block p {
@@ -240,6 +287,14 @@ body.quarto-dark .rtl-ar p {
   color: #93c5fd;
   background-color: #1e293b;
   border-right-color: #3b82f6;
+}
+
+body.quarto-dark .rtl-ur-poetry,
+body.quarto-dark .rtl-ur-poetry p,
+body.quarto-dark .rtl-ur-poetry .line-block {
+  color: #cccc99;
+  background-color: #292112;
+  border-color: #d97706;
 }
 
 body.quarto-dark .q-ref {
