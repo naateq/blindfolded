@@ -8,6 +8,46 @@ local function first_item(list)
   return nil
 end
 
+-- Table of all custom tags used in Markdown (@lead, @rtl-ar, @rtl-ur, etc.)
+local known_tags = {
+  lead = true,
+  ["q-trans-en"] = true,
+  ["q-meaning-en"] = true,
+  rtl = true,
+  ["rtl-ur"] = true,
+  ["rtl-ar"] = true,
+  ["color-amber"] = true,
+  amber = true,
+  maroon = true
+}
+
+-- Parse scripture and Hadith references to build hyperlinked or styled nodes
+local function parse_ref_element(inside_text)
+  -- Quran reference: e.g. "Quran 43:22" or "Quran 43:22-25"
+  local surah, ayah = inside_text:match("^Quran%s+(%d+):(%d+)")
+  if surah and ayah then
+    local url = string.format("https://quran.com/%s/%s", surah, ayah)
+    return pandoc.Link({pandoc.Str("[" .. inside_text .. "]")}, url, "", pandoc.Attr("", {"q-ref"}))
+  end
+
+  -- Bukhari Hadith: e.g. "Bukhari 1773"
+  local bukhari_id = inside_text:match("^Bukhari%s+(%d+)")
+  if bukhari_id then
+    local url = string.format("https://sunnah.com/bukhari:%s", bukhari_id)
+    return pandoc.Link({pandoc.Str("[" .. inside_text .. "]")}, url, "", pandoc.Attr("", {"q-ref"}))
+  end
+
+  -- Muslim Hadith: e.g. "Muslim 2686"
+  local muslim_id = inside_text:match("^Muslim%s+(%d+)")
+  if muslim_id then
+    local url = string.format("https://sunnah.com/muslim:%s", muslim_id)
+    return pandoc.Link({pandoc.Str("[" .. inside_text .. "]")}, url, "", pandoc.Attr("", {"q-ref"}))
+  end
+
+  -- Fallback: Styled maroon span
+  return pandoc.Span({pandoc.Str("[" .. inside_text .. "]")}, pandoc.Attr("", {"q-ref"}))
+end
+
 local function transform_inlines(inlines)
   local merged = pandoc.List()
   local i = 1
@@ -34,7 +74,7 @@ local function transform_inlines(inlines)
         if found_end then
           local full = table.concat(buf, "")
           local inside, after = full:match("^{(.-)}(.*)$")
-          merged:insert(pandoc.Span({pandoc.Str("[" .. (inside or full) .. "]")}, pandoc.Attr("", {"q-ref"})))
+          merged:insert(parse_ref_element(inside or full))
           if after and after ~= "" then
             merged:insert(pandoc.Str(after))
           end
@@ -48,14 +88,9 @@ local function transform_inlines(inlines)
         i = i + 1
       end
 
-    -- Case 2: Any stray Cite object (@q-trans-en, @lead, @maroon, @amber, etc.)
+    -- Case 2: Stray Cite object (@rtl-ar, @rtl-ur, @q-trans-en, @lead, @maroon, @amber, etc.)
     elseif first_cite then
       local id = first_cite.id
-      local known_tags = {
-        lead = true, ["q-trans-en"] = true, ["q-meaning-en"] = true,
-        rtl = true, ["rtl-ur"] = true, ["color-amber"] = true,
-        amber = true, maroon = true
-      }
       if known_tags[id] then
         if i + 1 <= #inlines and inlines[i + 1].t == "Space" then
           i = i + 2
@@ -63,11 +98,11 @@ local function transform_inlines(inlines)
           i = i + 1
         end
       else
-        merged:insert(item)
+        -- Consume stray cite nodes so they don't leak to Typst bibliography
         i = i + 1
       end
 
-    -- Case 3: Inline @{tag| content }@ (handles trailing punctuation like }@. and stops before @ref)
+    -- Case 3: Inline @{tag| content }@
     elseif item.t == "Str" and item.text:match("^@{([%w%-]+)|") then
       local tag_name, first_part = item.text:match("^@{([%w%-]+)|(.*)$")
       local inner_inlines = pandoc.List()
@@ -117,9 +152,12 @@ end
 function Cite(el)
   local raw = pandoc.utils.stringify(el)
   if raw:match("@ref{.-}") then
-    local replaced = raw:gsub("@ref{(.-)}", "[%1]")
-    return pandoc.Span({pandoc.Str(replaced)}, pandoc.Attr("", {"q-ref"}))
+    local inside = raw:match("@ref{(.-)}")
+    return parse_ref_element(inside)
   end
+
+  -- Intercept any remaining Cite elements to prevent Typst bibliography errors
+  return pandoc.Str("")
 end
 
 local function extract_leading_tag(inlines)
@@ -129,12 +167,7 @@ local function extract_leading_tag(inlines)
   local first_cite = (first.t == "Cite") and first_item(first.citations) or nil
   if first_cite then
     local id = first_cite.id
-    local valid = {
-      lead = true, ["q-trans-en"] = true, ["q-meaning-en"] = true,
-      rtl = true, ["rtl-ur"] = true, ["color-amber"] = true,
-      amber = true, maroon = true
-    }
-    if valid[id] then
+    if known_tags[id] then
       local rest = pandoc.List()
       for idx = 2, #inlines do
         if not (idx == 2 and inlines[idx].t == "Space") then
@@ -170,6 +203,12 @@ function Para(el)
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"q-trans-en"}))
   elseif tag == "q-meaning-en" then
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"q-meaning-en"}))
+  elseif tag == "rtl-ar" then
+    return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"rtl-block"}, {lang = "ar", dir = "rtl"}))
+  elseif tag == "rtl-ur" then
+    return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"rtl-block"}, {lang = "ur", dir = "rtl"}))
+  elseif tag == "rtl" then
+    return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"rtl-block"}, {dir = "rtl"}))
   elseif tag == "color-amber" or tag == "amber" then
     return pandoc.Div({pandoc.Para(rest)}, pandoc.Attr("", {"callout-amber"}))
   elseif tag == "maroon" then
@@ -198,6 +237,8 @@ function BlockQuote(el)
       return pandoc.Div(new_blocks, pandoc.Attr("", {"q-trans-en"}))
     elseif tag == "q-meaning-en" then
       return pandoc.Div(new_blocks, pandoc.Attr("", {"q-meaning-en"}))
+    elseif tag == "rtl-ar" then
+      return pandoc.Div(new_blocks, pandoc.Attr("", {"rtl-block"}, {lang = "ar", dir = "rtl"}))
     elseif tag == "rtl-ur" then
       return pandoc.Div(new_blocks, pandoc.Attr("", {"rtl-block"}, {lang = "ur", dir = "rtl"}))
     elseif tag == "rtl" then
