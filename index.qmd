@@ -10,16 +10,6 @@ listing:
       reading-time: "Read Time"
     filter-ui: false
     sort-ui: false
-  - id: atheism
-    contents: "articles/atheism/*.md"
-    type: table
-    sort: "order"
-    fields: [title, reading-time]
-    field-display-names:
-      title: "Article"
-      reading-time: "Read Time"
-    filter-ui: false
-    sort-ui: false
   - id: concept-of-god
     contents: "articles/gods/*.md"
     type: table
@@ -32,6 +22,16 @@ listing:
     sort-ui: false
   - id: reflect
     contents: "articles/reflect/*.md"
+    type: table
+    sort: "order"
+    fields: [title, reading-time]
+    field-display-names:
+      title: "Article"
+      reading-time: "Read Time"
+    filter-ui: false
+    sort-ui: false
+  - id: atheism
+    contents: "articles/atheism/*.md"
     type: table
     sort: "order"
     fields: [title, reading-time]
