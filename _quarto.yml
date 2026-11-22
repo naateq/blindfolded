@@ -9,7 +9,7 @@ website:
   description: "Un-blindfold the blindfolded via a rational Quranic approach."
   site-url: "https://unblindfold.com"
   repo-url: "https://github.com/naateq/blindfolded"
-  repo-actions: false
+  repo-actions: none
   page-navigation: true
 
   navbar:
