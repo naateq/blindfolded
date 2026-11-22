@@ -1,17 +1,16 @@
 -- filters/unblindfold.lua
 -- Universal Pandoc AST filter for unblindfold.com (HTML, Typst PDF, ePub)
 
--- Helper: Parse inline custom tags (@{qxp|...}, @{maroon|...}, @{color-amber|...}, @ref{...})
+-- 1. Walk a list of inlines to handle @ref{...}, @{tag|...}, and mid-paragraph @tags
 local function transform_inlines(inlines)
-  -- First, convert the inline list to raw string tokens where needed, or walk tokens directly
   local merged = pandoc.List()
   local i = 1
 
   while i <= #inlines do
     local item = inlines[i]
 
-    -- 1. Handle @ref followed by {Citation Text}
-    if item.t == "Cite" and item.citations and #item.citations > 0 and item.citations.id == "ref" then
+    -- Case 1: @ref followed by {Citation Text}
+    if item.t == "Cite" and item.citations and #item.citations > 0 and item.citations[1].id == "ref" then
       if i + 1 <= #inlines and inlines[i + 1].t == "Str" and inlines[i + 1].text:match("^{") then
         local buf = {}
         local j = i + 1
@@ -30,7 +29,27 @@ local function transform_inlines(inlines)
           merged:insert(pandoc.Span({pandoc.Str("[" .. full .. "]")}, pandoc.Attr("", {"q-ref"})))
           i = j + 1
         else
-          merged:insert(item)
+          merged:insert(pandoc.Str(""))
+          i = i + 1
+        end
+      else
+        merged:insert(pandoc.Str(""))
+        i = i + 1
+      end
+
+    -- Case 2: Any stray Cite object (@q-trans-en, @lead, @maroon, @amber, etc.) appearing mid-paragraph
+    elseif item.t == "Cite" and item.citations and #item.citations > 0 then
+      local id = item.citations[1].id
+      local known_tags = {
+        lead = true, ["q-trans-en"] = true, ["q-meaning-en"] = true,
+        rtl = true, ["rtl-ur"] = true, ["color-amber"] = true,
+        amber = true, maroon = true
+      }
+      if known_tags[id] then
+        -- Strip the stray tag marker and skip any immediate trailing space so Typst never sees #cite
+        if i + 1 <= #inlines and inlines[i + 1].t == "Space" then
+          i = i + 2
+        else
           i = i + 1
         end
       else
@@ -38,12 +57,11 @@ local function transform_inlines(inlines)
         i = i + 1
       end
 
-    -- 2. Handle inline @{tag| content }@ or @{tag| content } across multiple tokens
+    -- Case 3: Inline @{tag| content }@ or @{tag| content } across multiple tokens
     elseif item.t == "Str" and item.text:match("^@{([%w%-]+)|") then
       local tag_name, first_part = item.text:match("^@{([%w%-]+)|(.*)$")
       local inner_inlines = pandoc.List()
       if first_part ~= "" then
-        -- Check if closing } or }@ is already in the very same Str token
         if first_part:match("}@?$") then
           local clean = first_part:gsub("}@?$", "")
           inner_inlines:insert(pandoc.Str(clean))
@@ -75,7 +93,6 @@ local function transform_inlines(inlines)
           end
         end
       else
-        -- "@{qxp|" followed by Space and text until "}@" or "}"
         local j = i + 1
         local closed = false
         while j <= #inlines do
@@ -120,10 +137,10 @@ end
 -- Check leading block-level @tag on paragraphs/blockquotes
 local function extract_leading_tag(inlines)
   if #inlines == 0 then return nil, inlines end
-  local first = inlines
+  local first = inlines[1]
 
   if first.t == "Cite" and first.citations and #first.citations > 0 then
-    local id = first.citations.id
+    local id = first.citations[1].id
     local valid = {
       lead = true, ["q-trans-en"] = true, ["q-meaning-en"] = true,
       rtl = true, ["rtl-ur"] = true, ["color-amber"] = true,
@@ -141,7 +158,7 @@ local function extract_leading_tag(inlines)
   end
 
   if first.t == "Str" and first.text == "@{quote" and #inlines >= 3 then
-    if inlines.t == "Space" and inlines.t == "Str" and inlines.text == "maroon}" then
+    if inlines[2].t == "Space" and inlines[3].t == "Str" and inlines[3].text == "maroon}" then
       local rest = pandoc.List()
       for idx = 4, #inlines do
         if not (idx == 4 and inlines[idx].t == "Space") then
@@ -174,9 +191,14 @@ function Para(el)
   end
 end
 
+-- Also process Plain blocks (used inside bulleted/numbered lists)
+function Plain(el)
+  return pandoc.Plain(transform_inlines(el.content))
+end
+
 function BlockQuote(el)
-  if #el.content > 0 and el.content.t == "Para" then
-    local tag, rest = extract_leading_tag(el.content.content)
+  if #el.content > 0 and el.content[1].t == "Para" then
+    local tag, rest = extract_leading_tag(el.content[1].content)
     rest = transform_inlines(rest)
 
     local new_blocks = pandoc.List({pandoc.Para(rest)})
