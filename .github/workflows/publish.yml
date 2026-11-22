@@ -3,10 +3,16 @@ name: Publish Quarto Website
 on:
   push:
     branches: [main]
-  workflow_dispatch: # Lets you trigger a rebuild manually anytime
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build-and-deploy:
@@ -17,12 +23,16 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: '1.6.42' # Update intentionally after testing locally
 
       - name: Render Quarto Project
         run: quarto render
 
       - name: Deploy to gh-pages branch
+        if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+          cname: unblindfold.com

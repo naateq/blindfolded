@@ -11,6 +11,9 @@ website:
   repo-url: "https://github.com/naateq/blindfolded"
   repo-actions: none
   page-navigation: true
+  open-graph: true
+  twitter-card: true
+  draft-mode: unlinked
 
   navbar:
     left:
@@ -23,7 +26,7 @@ website:
           - text: "Concept of God"
             href: articles/gods/unpredictable-world.md
           - text: "Think & Reflect"
-            href: articles/reflect/critique-of-reason.md
+            href: articles/reflect/rational-thinking.md
           - text: "Atheism"
             href: articles/atheism/atheism.md
 
@@ -48,11 +51,11 @@ website:
           - articles/reflect/rational-thinking.md
           - articles/reflect/quran-and-reason.md
           - articles/reflect/critique-of-reason.md
-#      - section: "Atheism"
-#        contents:
-#          - articles/atheism/atheism.md
-#          - articles/atheism/objections.md
-#          - articles/atheism/sowhat.md
+      - section: "Atheism"
+        contents:
+          - articles/atheism/atheism.md
+          - articles/atheism/objections.md
+          - articles/atheism/sowhat.md
 
 format:
   html:
@@ -65,7 +68,7 @@ format:
       text: |
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://googleapis.com" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
   typst:
     include-in-header: typst-show.typ
     toc: true

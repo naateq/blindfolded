@@ -1,5 +1,3 @@
-@import url('https://googleapis.com');
-
 :root {
   --dark-blue: #07457f;
   --secondary-blue: #3A68AB;
@@ -57,7 +55,7 @@ main p {
   line-height: 1.9;
 }
 
-/* Block Arabic (@{rtl-ar}) */
+/* Block Arabic (@{rtl-ar} or ::: {.rtl-ar}) */
 .rtl-ar {
   font-family: var(--font-arabic);
   direction: rtl;
@@ -77,8 +75,8 @@ main p {
   text-align: right;
 }
 
-/* Inline & Block Urdu (:lang(ur) and @{rtl-ur}) */
-:lang(ur), .rtl-block {
+/* Inline & Block Urdu (:lang(ur), @{rtl-ur}, or ::: {.rtl-ur}) */
+:lang(ur), .rtl-ur, .rtl-block {
   font-family: var(--font-urdu);
   direction: rtl;
   text-align: right;
@@ -94,6 +92,11 @@ main p {
   border-radius: 6px 0 0 6px;
 }
 
+.rtl-block p {
+  margin: 0;
+  text-align: right;
+}
+
 /* Lead paragraph */
 .lead-para {
   font-size: 1.15rem;
@@ -104,7 +107,7 @@ main p {
   margin-bottom: 1.5rem;
 }
 
-/* Quranic Translations & Meanings (Original Blue Palette) */
+/* Quranic Translations & Meanings */
 .q-trans-en {
   color: var(--secondary-blue);
   margin: 1.25rem 0;
@@ -120,6 +123,7 @@ main p {
   padding: 0.75rem 1.2rem;
   border-left: 4px solid var(--dark-blue);
   background-color: #f1f5f9;
+  border-radius: 0 6px 6px 0;
 }
 
 .q-trans-en p, .q-meaning-en p {
@@ -127,12 +131,17 @@ main p {
   text-align: left;
 }
 
-/* Scripture references (@ref) in signature maroon */
+/* Scripture references (@ref) */
 .q-ref {
   font-size: 0.85em;
   color: var(--maroon);
   font-weight: 500;
   margin-left: 0.25em;
+  text-decoration: none;
+}
+
+.q-ref:hover {
+  text-decoration: underline;
 }
 
 /* Explanatory notes (@{qxp|...}) */
@@ -141,7 +150,7 @@ main p {
   color: #6b7280;
 }
 
-/* Inline & Block Maroon / Amber / Color Classes */
+/* Inline & Block Maroon / Amber / Utility Classes */
 .maroon {
   color: var(--maroon);
   font-weight: 600;
@@ -154,6 +163,7 @@ main p {
   padding: 0.75rem 1.2rem;
   border-left: 4px solid var(--maroon);
   background-color: #fdf6f8;
+  border-radius: 0 6px 6px 0;
 }
 
 .color-amber, .amber {
@@ -173,6 +183,10 @@ main p {
 .poetry-trans {
   margin-top: 0.25rem;
   font-style: italic;
+}
+
+.indent-block {
+  padding-left: 1.25rem;
 }
 
 .darkblue { color: var(--dark-blue); }
