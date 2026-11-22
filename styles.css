@@ -155,3 +155,52 @@ main p {
 
 .darkblue { color: var(--dark-blue); }
 .green { color: #338833; }
+
+/* ==========================================================================
+   Dark Mode Overrides for Custom Unblindfold Blocks
+   ========================================================================== */
+[data-bs-theme="dark"] body {
+  color: #e2e8f0;
+}
+
+[data-bs-theme="dark"] .lead-para {
+  color: #cbd5e1;
+  border-bottom-color: #334155;
+}
+
+[data-bs-theme="dark"] .q-trans-en {
+  color: #93c5fd;
+  background-color: #1e293b;
+  border-left-color: #3b82f6;
+}
+
+[data-bs-theme="dark"] .q-meaning-en {
+  color: #bfdbfe;
+  background-color: #172554;
+  border-left-color: #60a5fa;
+}
+
+[data-bs-theme="dark"] .q-ref {
+  color: #fca5a5;
+}
+
+[data-bs-theme="dark"] .qxp {
+  color: #94a3b8;
+}
+
+[data-bs-theme="dark"] .maroon,
+[data-bs-theme="dark"] .quote-maroon {
+  color: #fda4af;
+}
+
+[data-bs-theme="dark"] .quote-maroon {
+  background-color: #2d161c;
+  border-left-color: #f43f5e;
+}
+
+[data-bs-theme="dark"] .callout-amber,
+[data-bs-theme="dark"] .rtl-block {
+  color: #cccc99; /* Your original warm night-mode reading tone */
+  background-color: #292112;
+  border-color: #d97706;
+}
