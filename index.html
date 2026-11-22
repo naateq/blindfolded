@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-85f0c644714f71aa2dbbb0f5056adbc3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-fae47caf9e852e6e4b6ee8ceec8e0f71.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,29 +79,73 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-concept-of-god .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-concept-of-god'] = new List('listing-concept-of-god', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-blindfolded .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-blindfolded'] = new List('listing-blindfolded', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-reflect .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-reflect'] = new List('listing-reflect', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
     }
   });
   </script>
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin="">
-<link href="https://googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Noto+Nastaliq+Urdu:wght@400;700&amp;family=Source+Serif+4:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://googleapis.com" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -162,15 +206,15 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-topics">    
         <li>
-    <a class="dropdown-item" href="./blindfolded/country-of-the-blind.html">
+    <a class="dropdown-item" href="./articles/blindfolded/country-of-the-blind.html">
  <span class="dropdown-text">Blindfolded</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./gods/unpredictable-world.html">
+    <a class="dropdown-item" href="./articles/gods/unpredictable-world.html">
  <span class="dropdown-text">Concept of God</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./reflect/critique-of-reason.html">
+    <a class="dropdown-item" href="./articles/reflect/critique-of-reason.html">
  <span class="dropdown-text">Reflect</span></a>
   </li>  
     </ul>
@@ -215,19 +259,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blindfolded/country-of-the-blind.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/blindfolded/country-of-the-blind.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Country of the Blind</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blindfolded/inherited-religion.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/blindfolded/inherited-religion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Inherited Religion</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./blindfolded/intellectual-blindness.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/blindfolded/intellectual-blindness.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Intellectual Blindness</span></a>
   </div>
 </li>
@@ -241,25 +285,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gods/unpredictable-world.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/gods/unpredictable-world.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">An Unpredictable World</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gods/god-of-miracles.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/gods/god-of-miracles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The God of Miracles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gods/no-miracles.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/gods/no-miracles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A world with no miracles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./gods/Quranic-God.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/gods/Quranic-God.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">The Quranic God</span></a>
   </div>
 </li>
@@ -273,7 +317,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reflect/critique-of-reason.html" class="sidebar-item-text sidebar-link">
+  <a href="./articles/reflect/critique-of-reason.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A Critique of Intellect</span></a>
   </div>
 </li>
@@ -285,8 +329,16 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="QmxpbmRmb2xkZWQ=">Blindfolded <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Q29uY2VwdCUyMG9mJTIwR29k">Concept of God <span class="quarto-category-count">(4)</span></div><div class="category" data-category="UmVmbGVjdA==">Reflect <span class="quarto-category-count">(1)</span></div></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="index.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#concept-of-god" id="toc-concept-of-god" class="nav-link active" data-scroll-target="#concept-of-god">Concept of God</a></li>
+  <li><a href="#blindfolded" id="toc-blindfolded" class="nav-link" data-scroll-target="#blindfolded">Blindfolded</a></li>
+  <li><a href="#reflect" id="toc-reflect" class="nav-link" data-scroll-target="#reflect">Reflect</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/naateq/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/naateq/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="index.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
@@ -310,152 +362,164 @@ window.Quarto = {
 </header>
 
 
-<p>Welcome to <strong>unblindfold.com</strong>. Select a topic from the sidebar to read sequentially, or browse all articles below.</p>
+<p>Welcome to <strong>unblindfold.com</strong>. Explore the essays below in sequence by topic, or use the search bar at the top right to find specific subjects.</p>
+<section id="concept-of-god" class="level2">
+<h2 class="anchored" data-anchor-id="concept-of-god">Concept of God</h2>
+<div id="listing-concept-of-god" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
 
+<th>
+Article
+</th>
 
+<th>
+Read Time
+</th>
 
+</tr>
+</thead>
+<tbody class="list">
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795304363512" data-listing-reading-time-sort="3" data-listing-word-count-sort="591">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blindfolded/country-of-the-blind.html" class="no-external-icon">Country of the Blind</a>
-</h3>
-<div class="listing-categories">
+<tr data-index="0" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="5" data-listing-word-count-sort="886" data-listing-title-sort="An Unpredictable World" data-listing-filename-sort="unpredictable-world.md">
+<td>
+<a href="./articles/gods/unpredictable-world.html" class="title listing-title">An Unpredictable World</a>
+</td>
+<td>
+<span class="listing-reading-time">5 min</span>
+</td>
 
-<div class="listing-category" onclick="window.quartoListingCategory('QmxpbmRmb2xkZWQ='); return false;">Blindfolded</div>
+</tr>
 
-</div>
-</div>
-<div class="metadata">
-<a href="./blindfolded/country-of-the-blind.html" class="no-external-icon">
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795304363513" data-listing-reading-time-sort="5" data-listing-word-count-sort="886">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./gods/unpredictable-world.html" class="no-external-icon">An Unpredictable World</a>
-</h3>
-<div class="listing-categories">
+<tr data-index="1" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="3" data-listing-word-count-sort="547" data-listing-title-sort="The God of Miracles" data-listing-filename-sort="god-of-miracles.md">
+<td>
+<a href="./articles/gods/god-of-miracles.html" class="title listing-title">The God of Miracles</a>
+</td>
+<td>
+<span class="listing-reading-time">3 min</span>
+</td>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uY2VwdCUyMG9mJTIwR29k'); return false;">Concept of God</div>
+</tr>
 
-</div>
-</div>
-<div class="metadata">
-<a href="./gods/unpredictable-world.html" class="no-external-icon">
-<div class="listing-reading-time">5 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UmVmbGVjdA==" data-listing-file-modified-sort="1795304363513" data-listing-reading-time-sort="7" data-listing-word-count-sort="1217">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./reflect/critique-of-reason.html" class="no-external-icon">A Critique of Intellect</a>
-</h3>
-<div class="listing-categories">
+<tr data-index="2" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="4" data-listing-word-count-sort="783" data-listing-title-sort="A world with no miracles" data-listing-filename-sort="no-miracles.md">
+<td>
+<a href="./articles/gods/no-miracles.html" class="title listing-title">A world with no miracles</a>
+</td>
+<td>
+<span class="listing-reading-time">4 min</span>
+</td>
 
-<div class="listing-category" onclick="window.quartoListingCategory('UmVmbGVjdA=='); return false;">Reflect</div>
+</tr>
 
-</div>
-</div>
-<div class="metadata">
-<a href="./reflect/critique-of-reason.html" class="no-external-icon">
-<div class="listing-reading-time">7 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795304363513" data-listing-reading-time-sort="5" data-listing-word-count-sort="877">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blindfolded/inherited-religion.html" class="no-external-icon">Inherited Religion</a>
-</h3>
-<div class="listing-categories">
+<tr data-index="3" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="10" data-listing-word-count-sort="1957" data-listing-title-sort="The Quranic God" data-listing-filename-sort="Quranic-God.md">
+<td>
+<a href="./articles/gods/Quranic-God.html" class="title listing-title">The Quranic God</a>
+</td>
+<td>
+<span class="listing-reading-time">10 min</span>
+</td>
 
-<div class="listing-category" onclick="window.quartoListingCategory('QmxpbmRmb2xkZWQ='); return false;">Blindfolded</div>
+</tr>
 
-</div>
-</div>
-<div class="metadata">
-<a href="./blindfolded/inherited-religion.html" class="no-external-icon">
-<div class="listing-reading-time">5 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795304363513" data-listing-reading-time-sort="3" data-listing-word-count-sort="547">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./gods/god-of-miracles.html" class="no-external-icon">The God of Miracles</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uY2VwdCUyMG9mJTIwR29k'); return false;">Concept of God</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./gods/god-of-miracles.html" class="no-external-icon">
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795304363513" data-listing-reading-time-sort="10" data-listing-word-count-sort="1883">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./blindfolded/intellectual-blindness.html" class="no-external-icon">Intellectual Blindness</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QmxpbmRmb2xkZWQ='); return false;">Blindfolded</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./blindfolded/intellectual-blindness.html" class="no-external-icon">
-<div class="listing-reading-time">10 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795304363513" data-listing-reading-time-sort="4" data-listing-word-count-sort="783">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./gods/no-miracles.html" class="no-external-icon">A world with no miracles</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uY2VwdCUyMG9mJTIwR29k'); return false;">Concept of God</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./gods/no-miracles.html" class="no-external-icon">
-<div class="listing-reading-time">4 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795304363513" data-listing-reading-time-sort="10" data-listing-word-count-sort="1956">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./gods/Quranic-God.html" class="no-external-icon">The Quranic God</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uY2VwdCUyMG9mJTIwR29k'); return false;">Concept of God</div>
-
-</div>
-</div>
-<div class="metadata">
-<a href="./gods/Quranic-God.html" class="no-external-icon">
-<div class="listing-reading-time">10 min</div>
-</a>
-</div>
-</div>
-</div>
+</tbody>
+</table>
 <div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</div>
+</section>
+<section id="blindfolded" class="level2">
+<h2 class="anchored" data-anchor-id="blindfolded">Blindfolded</h2>
+<div id="listing-blindfolded" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+Article
+</th>
+
+<th>
+Read Time
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="3" data-listing-word-count-sort="591" data-listing-title-sort="Country of the Blind" data-listing-filename-sort="country-of-the-blind.md">
+<td>
+<a href="./articles/blindfolded/country-of-the-blind.html" class="title listing-title">Country of the Blind</a>
+</td>
+<td>
+<span class="listing-reading-time">3 min</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="5" data-listing-word-count-sort="877" data-listing-title-sort="Inherited Religion" data-listing-filename-sort="inherited-religion.md">
+<td>
+<a href="./articles/blindfolded/inherited-religion.html" class="title listing-title">Inherited Religion</a>
+</td>
+<td>
+<span class="listing-reading-time">5 min</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="10" data-listing-word-count-sort="1883" data-listing-title-sort="Intellectual Blindness" data-listing-filename-sort="intellectual-blindness.md">
+<td>
+<a href="./articles/blindfolded/intellectual-blindness.html" class="title listing-title">Intellectual Blindness</a>
+</td>
+<td>
+<span class="listing-reading-time">10 min</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="reflect" class="level2">
+<h2 class="anchored" data-anchor-id="reflect">Reflect</h2>
+<div id="listing-reflect" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+Article
+</th>
+
+<th>
+Read Time
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-categories="UmVmbGVjdA==" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="7" data-listing-word-count-sort="1217" data-listing-title-sort="A Critique of Intellect" data-listing-filename-sort="critique-of-reason.md">
+<td>
+<a href="./articles/reflect/critique-of-reason.html" class="title listing-title">A Critique of Intellect</a>
+</td>
+<td>
+<span class="listing-reading-time">7 min</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -937,4 +1001,4 @@ window.Quarto = {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/naateq/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/naateq/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
