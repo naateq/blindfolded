@@ -14,8 +14,8 @@ website:
 
   navbar:
     left:
-#      - href: index.qmd
-#        text: Home
+      - href: index.qmd
+        text: Home
       - text: "Topics"
         menu:
           - text: "Blindfolded"
@@ -56,7 +56,9 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
     css: styles.css
     toc: true
     include-in-header:
