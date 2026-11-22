@@ -2,14 +2,19 @@
   {
     "listing": "/index.html",
     "items": [
+      "/articles/blindfolded/country-of-the-blind.html",
+      "/articles/blindfolded/inherited-religion.html",
+      "/articles/blindfolded/intellectual-blindness.html",
+      "/articles/atheism/atheism.html",
+      "/articles/atheism/objections.html",
+      "/articles/atheism/sowhat.html",
       "/articles/gods/unpredictable-world.html",
       "/articles/gods/god-of-miracles.html",
       "/articles/gods/no-miracles.html",
       "/articles/gods/Quranic-God.html",
-      "/articles/blindfolded/country-of-the-blind.html",
-      "/articles/blindfolded/inherited-religion.html",
-      "/articles/blindfolded/intellectual-blindness.html",
-      "/articles/reflect/critique-of-reason.html"
+      "/articles/reflect/quran-and-reason.html",
+      "/articles/reflect/critique-of-reason.html",
+      "/articles/reflect/rational-thinking.html"
     ]
   }
 ]

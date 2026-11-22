@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Unblindfold</title>
+<title>Unblindfold – UnBlindfold.com</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -79,28 +79,6 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-concept-of-god .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-concept-of-god'] = new List('listing-concept-of-god', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-blindfolded .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -115,6 +93,50 @@ ul.task-list li input[type="checkbox"] {
 
     window['quarto-listings'] = window['quarto-listings'] || {};
     window['quarto-listings']['listing-blindfolded'] = new List('listing-blindfolded', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-atheism .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-atheism'] = new List('listing-atheism', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-concept-of-god .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-concept-of-god'] = new List('listing-concept-of-god', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -188,7 +210,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Unblindfold</span>
+    <span class="navbar-title">UnBlindfold.com</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -208,6 +230,10 @@ window.Quarto = {
         <li>
     <a class="dropdown-item" href="./articles/blindfolded/country-of-the-blind.html">
  <span class="dropdown-text">Blindfolded</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./articles/atheism/atheism.html">
+ <span class="dropdown-text">Atheism</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./articles/gods/unpredictable-world.html">
@@ -280,9 +306,35 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-2-label">Concept of God</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Atheism</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
       <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./articles/atheism/atheism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Atheism - A Rational Approach to A-theism</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./articles/atheism/objections.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Objections and Questions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./articles/atheism/sowhat.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">So What!</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Concept of God</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+      </div>
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./articles/gods/unpredictable-world.html" class="sidebar-item-text sidebar-link">
@@ -311,14 +363,26 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text" id="quarto-sidebar-section-3-label">Reflect</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Reflect</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./articles/reflect/critique-of-reason.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">A Critique of Intellect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./articles/reflect/quran-and-reason.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Quran - Reason-based Message</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./articles/reflect/rational-thinking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rational Thinking</span></a>
   </div>
 </li>
       </ul>
@@ -333,11 +397,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#concept-of-god" id="toc-concept-of-god" class="nav-link active" data-scroll-target="#concept-of-god">Concept of God</a></li>
-  <li><a href="#blindfolded" id="toc-blindfolded" class="nav-link" data-scroll-target="#blindfolded">Blindfolded</a></li>
-  <li><a href="#reflect" id="toc-reflect" class="nav-link" data-scroll-target="#reflect">Reflect</a></li>
+  <li><a href="#blindfolded" id="toc-blindfolded" class="nav-link active" data-scroll-target="#blindfolded">Blindfolded</a></li>
+  <li><a href="#atheism" id="toc-atheism" class="nav-link" data-scroll-target="#atheism">Atheism</a></li>
+  <li><a href="#concept-of-god" id="toc-concept-of-god" class="nav-link" data-scroll-target="#concept-of-god">Concept of God</a></li>
+  <li><a href="#think-reflect" id="toc-think-reflect" class="nav-link" data-scroll-target="#think-reflect">Think &amp; Reflect</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/naateq/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/naateq/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="index.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>Typst</a></li><li><a href="index.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
@@ -363,70 +428,6 @@ window.Quarto = {
 
 
 <p>Welcome to <strong>unblindfold.com</strong>. Explore the essays below in sequence by topic, or use the search bar at the top right to find specific subjects.</p>
-<section id="concept-of-god" class="level2">
-<h2 class="anchored" data-anchor-id="concept-of-god">Concept of God</h2>
-<div id="listing-concept-of-god" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
-Article
-</th>
-
-<th>
-Read Time
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="5" data-listing-word-count-sort="886" data-listing-title-sort="An Unpredictable World" data-listing-filename-sort="unpredictable-world.md">
-<td>
-<a href="./articles/gods/unpredictable-world.html" class="title listing-title">An Unpredictable World</a>
-</td>
-<td>
-<span class="listing-reading-time">5 min</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="3" data-listing-word-count-sort="547" data-listing-title-sort="The God of Miracles" data-listing-filename-sort="god-of-miracles.md">
-<td>
-<a href="./articles/gods/god-of-miracles.html" class="title listing-title">The God of Miracles</a>
-</td>
-<td>
-<span class="listing-reading-time">3 min</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="4" data-listing-word-count-sort="783" data-listing-title-sort="A world with no miracles" data-listing-filename-sort="no-miracles.md">
-<td>
-<a href="./articles/gods/no-miracles.html" class="title listing-title">A world with no miracles</a>
-</td>
-<td>
-<span class="listing-reading-time">4 min</span>
-</td>
-
-</tr>
-
-<tr data-index="3" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="10" data-listing-word-count-sort="1957" data-listing-title-sort="The Quranic God" data-listing-filename-sort="Quranic-God.md">
-<td>
-<a href="./articles/gods/Quranic-God.html" class="title listing-title">The Quranic God</a>
-</td>
-<td>
-<span class="listing-reading-time">10 min</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div>
-</section>
 <section id="blindfolded" class="level2">
 <h2 class="anchored" data-anchor-id="blindfolded">Blindfolded</h2>
 <div id="listing-blindfolded" class="quarto-listing quarto-listing-container-table">
@@ -446,7 +447,7 @@ Read Time
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="3" data-listing-word-count-sort="591" data-listing-title-sort="Country of the Blind" data-listing-filename-sort="country-of-the-blind.md">
+<tr data-index="0" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="3" data-listing-word-count-sort="591" data-listing-title-sort="Country of the Blind" data-listing-filename-sort="country-of-the-blind.md">
 <td>
 <a href="./articles/blindfolded/country-of-the-blind.html" class="title listing-title">Country of the Blind</a>
 </td>
@@ -456,7 +457,7 @@ Read Time
 
 </tr>
 
-<tr data-index="1" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="5" data-listing-word-count-sort="877" data-listing-title-sort="Inherited Religion" data-listing-filename-sort="inherited-religion.md">
+<tr data-index="1" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="5" data-listing-word-count-sort="872" data-listing-title-sort="Inherited Religion" data-listing-filename-sort="inherited-religion.md">
 <td>
 <a href="./articles/blindfolded/inherited-religion.html" class="title listing-title">Inherited Religion</a>
 </td>
@@ -466,7 +467,7 @@ Read Time
 
 </tr>
 
-<tr data-index="2" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795314369295" data-listing-reading-time-sort="10" data-listing-word-count-sort="1883" data-listing-title-sort="Intellectual Blindness" data-listing-filename-sort="intellectual-blindness.md">
+<tr data-index="2" data-categories="QmxpbmRmb2xkZWQ=" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="10" data-listing-word-count-sort="1879" data-listing-title-sort="Intellectual Blindness" data-listing-filename-sort="intellectual-blindness.md">
 <td>
 <a href="./articles/blindfolded/intellectual-blindness.html" class="title listing-title">Intellectual Blindness</a>
 </td>
@@ -481,8 +482,126 @@ Read Time
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 </section>
-<section id="reflect" class="level2">
-<h2 class="anchored" data-anchor-id="reflect">Reflect</h2>
+<section id="atheism" class="level2">
+<h2 class="anchored" data-anchor-id="atheism">Atheism</h2>
+<div id="listing-atheism" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+Article
+</th>
+
+<th>
+Read Time
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-categories="YXRoZWlzbQ==" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="11" data-listing-word-count-sort="2032" data-listing-title-sort="Atheism - A Rational Approach to A-theism" data-listing-filename-sort="atheism.md">
+<td>
+<a href="./articles/atheism/atheism.html" class="title listing-title">Atheism - A Rational Approach to A-theism</a>
+</td>
+<td>
+<span class="listing-reading-time">11 min</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-categories="YXRoZWlzbQ==" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="7" data-listing-word-count-sort="1280" data-listing-title-sort="Objections and Questions" data-listing-filename-sort="objections.md">
+<td>
+<a href="./articles/atheism/objections.html" class="title listing-title">Objections and Questions</a>
+</td>
+<td>
+<span class="listing-reading-time">7 min</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-categories="YXRoZWlzbQ==" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="8" data-listing-word-count-sort="1574" data-listing-title-sort="So What!" data-listing-filename-sort="sowhat.md">
+<td>
+<a href="./articles/atheism/sowhat.html" class="title listing-title">So What!</a>
+</td>
+<td>
+<span class="listing-reading-time">8 min</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="concept-of-god" class="level2">
+<h2 class="anchored" data-anchor-id="concept-of-god">Concept of God</h2>
+<div id="listing-concept-of-god" class="quarto-listing quarto-listing-container-table">
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+
+<th>
+Article
+</th>
+
+<th>
+Read Time
+</th>
+
+</tr>
+</thead>
+<tbody class="list">
+
+<tr data-index="0" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="5" data-listing-word-count-sort="886" data-listing-title-sort="An Unpredictable World" data-listing-filename-sort="unpredictable-world.md">
+<td>
+<a href="./articles/gods/unpredictable-world.html" class="title listing-title">An Unpredictable World</a>
+</td>
+<td>
+<span class="listing-reading-time">5 min</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="3" data-listing-word-count-sort="547" data-listing-title-sort="The God of Miracles" data-listing-filename-sort="god-of-miracles.md">
+<td>
+<a href="./articles/gods/god-of-miracles.html" class="title listing-title">The God of Miracles</a>
+</td>
+<td>
+<span class="listing-reading-time">3 min</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="4" data-listing-word-count-sort="778" data-listing-title-sort="A world with no miracles" data-listing-filename-sort="no-miracles.md">
+<td>
+<a href="./articles/gods/no-miracles.html" class="title listing-title">A world with no miracles</a>
+</td>
+<td>
+<span class="listing-reading-time">4 min</span>
+</td>
+
+</tr>
+
+<tr data-index="3" data-categories="Q29uY2VwdCUyMG9mJTIwR29k" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="10" data-listing-word-count-sort="1955" data-listing-title-sort="The Quranic God" data-listing-filename-sort="Quranic-God.md">
+<td>
+<a href="./articles/gods/Quranic-God.html" class="title listing-title">The Quranic God</a>
+</td>
+<td>
+<span class="listing-reading-time">10 min</span>
+</td>
+
+</tr>
+
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
+<section id="think-reflect" class="level2">
+<h2 class="anchored" data-anchor-id="think-reflect">Think &amp; Reflect</h2>
 <div id="listing-reflect" class="quarto-listing quarto-listing-container-table">
 <table class="quarto-listing-table table">
 <thead>
@@ -500,12 +619,32 @@ Read Time
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="UmVmbGVjdA==" data-listing-file-modified-sort="1795314369296" data-listing-reading-time-sort="7" data-listing-word-count-sort="1217" data-listing-title-sort="A Critique of Intellect" data-listing-filename-sort="critique-of-reason.md">
+<tr data-index="0" data-categories="UmVmbGVjdA==" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="5" data-listing-word-count-sort="823" data-listing-title-sort="The Quran - Reason-based Message" data-listing-filename-sort="quran-and-reason.md">
+<td>
+<a href="./articles/reflect/quran-and-reason.html" class="title listing-title">The Quran - Reason-based Message</a>
+</td>
+<td>
+<span class="listing-reading-time">5 min</span>
+</td>
+
+</tr>
+
+<tr data-index="1" data-categories="UmVmbGVjdA==" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="7" data-listing-word-count-sort="1216" data-listing-title-sort="A Critique of Intellect" data-listing-filename-sort="critique-of-reason.md">
 <td>
 <a href="./articles/reflect/critique-of-reason.html" class="title listing-title">A Critique of Intellect</a>
 </td>
 <td>
 <span class="listing-reading-time">7 min</span>
+</td>
+
+</tr>
+
+<tr data-index="2" data-categories="UmVmbGVjdA==" data-listing-file-modified-sort="1795317072378" data-listing-reading-time-sort="6" data-listing-word-count-sort="1188" data-listing-title-sort="Rational Thinking" data-listing-filename-sort="rational-thinking.md">
+<td>
+<a href="./articles/reflect/rational-thinking.html" class="title listing-title">Rational Thinking</a>
+</td>
+<td>
+<span class="listing-reading-time">6 min</span>
 </td>
 
 </tr>
@@ -1001,4 +1140,4 @@ Read Time
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/naateq/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/naateq/blob/main/index.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>
