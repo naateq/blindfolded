@@ -23,8 +23,8 @@ Yet even as these Muslim polymaths served as intellectual towering giants for pr
 The visionary philosopher and poet Allama Muhammad Iqbal (1877–1938) powerfully captured this tragedy in his poetic collection *Bang-e-Dra* (The Call of the Marching Bell):
 
 ::: {.rtl-ur-poetry lang="ur" dir="rtl"}
-> لے گئے تثلیث کے فرزند میراثِ خلیل
-> خشتِ بنيادِ كليسا بن گئی خاكِ حجاز
+| لے گئے تثلیث کے فرزند میراثِ خلیل
+| خشتِ بنيادِ كليسا بن گئی خاكِ حجاز
 :::
 
 >@{color-amber} Europe inherited the intellectual legacy of the Muslim world,  
