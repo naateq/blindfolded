@@ -50,12 +50,34 @@ main p {
   letter-spacing: normal !important;
 }
 
+/* Inline Arabic (:lang(ar)) */
 :lang(ar) {
   font-family: var(--font-arabic);
   font-size: 1.3em;
   line-height: 1.9;
 }
 
+/* Block Arabic (@{rtl-ar}) */
+.rtl-ar {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  font-size: 1.42em;
+  line-height: 2.1;
+  color: var(--dark-blue);
+  margin: 1.25rem 0;
+  padding: 0.85rem 1.25rem;
+  border-right: 4px solid var(--secondary-blue);
+  background-color: #f8fafc;
+  border-radius: 6px 0 0 6px;
+}
+
+.rtl-ar p {
+  margin: 0;
+  text-align: right;
+}
+
+/* Inline & Block Urdu (:lang(ur) and @{rtl-ur}) */
 :lang(ur), .rtl-block {
   font-family: var(--font-urdu);
   direction: rtl;
@@ -197,6 +219,13 @@ body.quarto-dark .q-meaning-en p {
   color: #bfdbfe;
   background-color: #172554;
   border-left-color: #60a5fa;
+}
+
+body.quarto-dark .rtl-ar,
+body.quarto-dark .rtl-ar p {
+  color: #93c5fd;
+  background-color: #1e293b;
+  border-right-color: #3b82f6;
 }
 
 body.quarto-dark .q-ref {
