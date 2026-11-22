@@ -1,7 +1,7 @@
 ---
 title: "A critique of intellect"
 categories: [Reflect]
-order: 2
+order: 3
 ---
 
 Throughout the Quranic text, numerous verses emphasize the central role of human intellect as an indispensable key to:

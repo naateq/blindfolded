@@ -1,7 +1,7 @@
 ---
 title: "The Quran & reason"
 categories: [Reflect]
-order: 1
+order: 2
 ---
 
 A widespread misconception holds that Islam, like many religious traditions, demands blind faith and passive submission to dogma. Yet an unbiased reading of the Quran reveals precisely the opposite: an unwavering insistence on rational inquiry. The Quran elevates the capacity to reason as the defining attribute separating human beings from animals, explicitly comparing those who surrender their intellect to cattle drifting blindly with the herd.

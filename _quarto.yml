@@ -50,9 +50,9 @@ website:
           - articles/gods/Quranic-God.md
       - section: "Reflect"
         contents:
-          - articles/reflect/critique-of-reason.md
-          - articles/reflect/quran-and-reason.md
           - articles/reflect/rational-thinking.md
+          - articles/reflect/quran-and-reason.md
+          - articles/reflect/critique-of-reason.md
 
 format:
   html:
