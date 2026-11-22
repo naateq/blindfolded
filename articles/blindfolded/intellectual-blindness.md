@@ -25,10 +25,12 @@ By bypassing dense academic jargon in favor of such evocative metaphors, the Qur
 
 @{q-trans-en} \[Intellectually] Blind and the seeing are not equal. Nor are the darknesses and the light ... And the living and the dead are not alike ... @ref{Quran 35:19-22}
 
+::: {.rtl-ar lang="ar" dir="rtl"}
 وَمَا يَسْتَوِى ٱلْأَعْمَىٰ وَٱلْبَصِيرُ  
 وَلَا ٱلظُّلُمَٰتُ وَلَا ٱلنُّورُ   
 وَلَا ٱلظِّلُّ وَلَا ٱلْحَرُورُ   
 وَمَا يَسْتَوِى ٱلْأَحْيَآءُ وَلَا ٱلْأَمْوَٰتُ إِنَّ ٱللَّهَ يُسْمِعُ مَن يَشَآءُ وَمَآ أَنتَ بِمُسْمِعٍ مَّن فِى ٱلْقُبُورِ  
+:::
 
 Here, the Quran eloquently casts itself as `the light` — a luminous guide navigating humanity through intellectual and moral confusion. In contrast, unexamined dogmas and irrational assumptions are portrayed as `darkness`. The capacity for critical inquiry and objective reasoning is celebrated as "seeing," while obstinate adherence to baseless beliefs is condemned as "blindness." These vivid allegories underscore a fundamental premise: true spiritual awakening cannot occur without rigorous intellectual engagement.
 

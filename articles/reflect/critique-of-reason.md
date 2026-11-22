@@ -22,15 +22,18 @@ Yet even as these Muslim polymaths served as intellectual towering giants for pr
 
 The visionary philosopher and poet Allama Muhammad Iqbal (1877–1938) powerfully captured this tragedy in his poetic collection *Bang-e-Dra* (The Call of the Marching Bell):
 
-
->@{rtl-ur} لے گئے تثلیث کے فرزند میراثِ خلیل
-<br> خشتِ بنيادِ كليسا بن گئی خاكِ حجاز
+::: {.rtl-ur-poetry lang="ur" dir="rtl"}
+> لے گئے تثلیث کے فرزند میراثِ خلیل
+> خشتِ بنيادِ كليسا بن گئی خاكِ حجاز
+:::
 
 >@{color-amber} Europe inherited the intellectual legacy of the Muslim world,  
 >@{color-amber} And upon it, built the foundations of its own ascendant empire.
 
->@{rtl-ur} واۓ ناکامی متاعِ کارواں جاتا رھا
-<br> کارواں کے دل سے احساس زیاں جاتا رھا
+::: {.rtl-ur-poetry lang="ur" dir="rtl"}
+| واۓ ناکامی متاعِ کارواں جاتا رھا
+| کارواں کے دل سے احساس زیاں جاتا رھا
+:::
 
 >@{color-amber} How heartbreaking! Our prized scientific heritage was lost—  
 >@{color-amber} Worse still, even the consciousness of that loss has vanished from our collective memory.

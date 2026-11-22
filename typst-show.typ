@@ -41,13 +41,13 @@
   text(fill: rgb("#aa3333"), weight: "semibold", body)
 )
 
-#let rtl-ar(body) = block(
+#let rtl-ar(body) = align(center, block(
   fill: rgb("#f8fafc"),
   stroke: (right: 3pt + rgb("#3a68ab")),
-  inset: (left: 10pt, right: 12pt, top: 8pt, bottom: 8pt),
-  width: 100%,
+  inset: (left: 14pt, right: 14pt, top: 10pt, bottom: 10pt),
+  width: 85%,
   align(right, text(dir: rtl, lang: "ar", size: 1.2em, fill: rgb("#07457f"), body))
-)
+))
 
 #let rtl-ur(body) = block(
   fill: rgb("#fffbeb"),
@@ -56,3 +56,11 @@
   width: 100%,
   align(right, text(dir: rtl, lang: "ur", size: 1.15em, fill: rgb("#9c5606"), body))
 )
+
+#let rtl-ur-poetry(body) = align(center, block(
+  fill: rgb("#fffbeb"),
+  stroke: (left: 3pt + rgb("#d97706"), right: 3pt + rgb("#d97706")),
+  inset: (left: 16pt, right: 16pt, top: 10pt, bottom: 10pt),
+  width: 85%,
+  align(center, text(dir: rtl, lang: "ur", size: 1.15em, fill: rgb("#9c5606"), body))
+))

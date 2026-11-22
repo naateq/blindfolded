@@ -19,6 +19,7 @@ local known_tags = {
   ["q-meaning-en"] = true,
   rtl = true,
   ["rtl-ur"] = true,
+  ["rtl-ur-poetry"] = true,
   ["rtl-ar"] = true,
   ["color-amber"] = true,
   amber = true,
@@ -32,6 +33,7 @@ local tag_to_attr = {
   ["q-meaning-en"]= pandoc.Attr("", {"q-meaning-en"}),
   ["rtl-ar"]      = pandoc.Attr("", {"rtl-ar"}, {lang = "ar", dir = "rtl"}),
   ["rtl-ur"]      = pandoc.Attr("", {"rtl-ur", "rtl-block"}, {lang = "ur", dir = "rtl"}),
+  ["rtl-ur-poetry"] = pandoc.Attr("", {"rtl-ur-poetry"}, {lang = "ur", dir = "rtl"}),
   rtl             = pandoc.Attr("", {"rtl-block"}, {dir = "rtl"}),
   ["color-amber"] = pandoc.Attr("", {"callout-amber"}),
   amber           = pandoc.Attr("", {"callout-amber"}),
@@ -73,6 +75,7 @@ local typst_block_classes = {
   "quote-maroon",
   "rtl-ar",
   "rtl-ur",
+  "rtl-ur-poetry",
 }
 
 local function parse_ref_element(inside_text)
