@@ -48,14 +48,14 @@ Welcome to **unblindfold.com**. Explore the essays below in sequence by topic, o
 :::{#blindfolded}
 :::
 
-## Atheism
-:::{#atheism}
-:::
-
 ## Concept of God
 :::{#concept-of-god}
 :::
 
 ## Think & Reflect
 :::{#reflect}
+:::
+
+## Atheism
+:::{#atheism}
 :::

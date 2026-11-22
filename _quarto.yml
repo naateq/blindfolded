@@ -20,12 +20,12 @@ website:
         menu:
           - text: "Blindfolded"
             href: articles/blindfolded/country-of-the-blind.md
-          - text: "Atheism"
-            href: articles/atheism/atheism.md
           - text: "Concept of God"
             href: articles/gods/unpredictable-world.md
-          - text: "Reflect"
+          - text: "Think & Reflect"
             href: articles/reflect/critique-of-reason.md
+#          - text: "Atheism"
+#            href: articles/atheism/atheism.md
 
   sidebar:
     style: "docked"
@@ -37,22 +37,22 @@ website:
           - articles/blindfolded/country-of-the-blind.md
           - articles/blindfolded/inherited-religion.md
           - articles/blindfolded/intellectual-blindness.md
-#      - section: "Atheism"
-#        contents:
-#          - articles/atheism/atheism.md
-#          - articles/atheism/objections.md
-#          - articles/atheism/sowhat.md
       - section: "Concept of God"
         contents:
           - articles/gods/unpredictable-world.md
           - articles/gods/god-of-miracles.md
           - articles/gods/no-miracles.md
           - articles/gods/Quranic-God.md
-      - section: "Reflect"
+      - section: "Think & Reflect"
         contents:
           - articles/reflect/rational-thinking.md
           - articles/reflect/quran-and-reason.md
           - articles/reflect/critique-of-reason.md
+#      - section: "Atheism"
+#        contents:
+#          - articles/atheism/atheism.md
+#          - articles/atheism/objections.md
+#          - articles/atheism/sowhat.md
 
 format:
   html:
