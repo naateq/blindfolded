@@ -24,8 +24,8 @@ website:
             href: articles/gods/unpredictable-world.md
           - text: "Think & Reflect"
             href: articles/reflect/critique-of-reason.md
-#          - text: "Atheism"
-#            href: articles/atheism/atheism.md
+          - text: "Atheism"
+            href: articles/atheism/atheism.md
 
   sidebar:
     style: "docked"
