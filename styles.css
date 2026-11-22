@@ -157,50 +157,75 @@ main p {
 .green { color: #338833; }
 
 /* ==========================================================================
-   Dark Mode Overrides for Custom Unblindfold Blocks
+   Dark Mode Overrides (Matches Quarto's body.quarto-dark class)
    ========================================================================== */
-[data-bs-theme="dark"] body {
+body.quarto-dark {
   color: #e2e8f0;
 }
 
-[data-bs-theme="dark"] .lead-para {
+body.quarto-dark main p,
+body.quarto-dark main li,
+body.quarto-dark td,
+body.quarto-dark th,
+body.quarto-dark h1,
+body.quarto-dark h2,
+body.quarto-dark h3,
+body.quarto-dark h4 {
+  color: #f1f5f9;
+}
+
+body.quarto-dark blockquote {
+  color: #cbd5e1;
+  border-left-color: #475569;
+}
+
+body.quarto-dark .lead-para,
+body.quarto-dark .lead-para p {
   color: #cbd5e1;
   border-bottom-color: #334155;
 }
 
-[data-bs-theme="dark"] .q-trans-en {
+body.quarto-dark .q-trans-en,
+body.quarto-dark .q-trans-en p {
   color: #93c5fd;
   background-color: #1e293b;
   border-left-color: #3b82f6;
 }
 
-[data-bs-theme="dark"] .q-meaning-en {
+body.quarto-dark .q-meaning-en,
+body.quarto-dark .q-meaning-en p {
   color: #bfdbfe;
   background-color: #172554;
   border-left-color: #60a5fa;
 }
 
-[data-bs-theme="dark"] .q-ref {
+body.quarto-dark .q-ref {
   color: #fca5a5;
 }
 
-[data-bs-theme="dark"] .qxp {
+body.quarto-dark .qxp {
   color: #94a3b8;
 }
 
-[data-bs-theme="dark"] .maroon,
-[data-bs-theme="dark"] .quote-maroon {
+body.quarto-dark .maroon,
+body.quarto-dark .quote-maroon,
+body.quarto-dark .quote-maroon p {
   color: #fda4af;
 }
 
-[data-bs-theme="dark"] .quote-maroon {
+body.quarto-dark .quote-maroon {
   background-color: #2d161c;
   border-left-color: #f43f5e;
 }
 
-[data-bs-theme="dark"] .callout-amber,
-[data-bs-theme="dark"] .rtl-block {
-  color: #cccc99; /* Your original warm night-mode reading tone */
+body.quarto-dark .callout-amber,
+body.quarto-dark .callout-amber p,
+body.quarto-dark .rtl-block,
+body.quarto-dark .rtl-block p {
+  color: #cccc99;
   background-color: #292112;
   border-color: #d97706;
 }
+
+body.quarto-dark .darkblue { color: #93c5fd; }
+body.quarto-dark .green { color: #86efac; }
