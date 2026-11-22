@@ -4,11 +4,9 @@ categories: [Concept of God]
 order: 3
 ---
 
-@{lead} Science believes in the assumption that the universe has always followed natural laws and continues to follow these laws. But this is only an assumption.
+@{lead} Empirical science rests upon a quiet leap of faith: the assumption that the universe has always operated under uniform natural laws and will continue to do so tomorrow. Yet this is an assumption, not an empirical proof.  
 
-There is no proof that the natural laws were the same a few million years ago or they will remain the same tomorrow. All things in the universe might have recently come into the current configuration giving a false impression as if things have always worked the same way.
-
-No scientist can guarantee with 100% surety that the universe will continue to follow the same laws tomorrow. The certainty comes only from the Creator Himself!
+There is no scientific guarantee that physical constants were identical a billion years ago, or that gravity will behave the same way tomorrow morning. For all we know, the cosmos could have coalesced into its present configuration moments ago, creating the grand illusion of an eternal, orderly past. No scientist, no matter how brilliant, can guarantee with absolute certainty that nature will not suddenly rewrite its rules tomorrow. True existential certainty comes not from measurement, but from the unyielding reliability of the Creator Himself!
 
 @{q-trans-en} ... He created everything and attached intrinsic measures (properties) with [precise] determination. @ref{Quran 25:2}
 
@@ -24,13 +22,17 @@ Once God issues a decree, it does not change. Neither does anyone else has the p
 
 **But, but, but ...**
 
-> What about the Will of God? If He created the laws of the universe, couldn't He change them at any time (to show miracles), to show that He has control over everything?
+> What about the Will of God? If He authored the laws of physics, couldn't He suspend them at any moment — performing miracles to demonstrate His absolute power and sovereign control?
 
-If the universe was created by someone other than God, you could have asked God to demonstrate His Power by turning the sun colder, by splitting the moon into two, or by making the needle float on water. But these are petty human desires to show off. If you are not impressed by the gigantic galaxies, mysterious blackholes, and fiery stars, or by the tiniest subatomic particles and quarks, no miracle will be able to convince you of God's Power!
+If the cosmos had been fashioned by a lesser deity, one might expect him to prove his majesty through theatrical displays: cooling the sun on a whim, fracturing the moon in two, or causing a steel needle to hover on water. But such demands stem from a primitive human urge for spectacle.
 
-God's creation plan is based on His Wisdom and He knew what properties to assign to entities. God created the fire to burn. He does not need to change His original plan and stop fire from burning. Only Humans make changes because their knowledge is not perfect.
+If a person remains uninspired by the titanic swirl of spinning galaxies, the silent majesty of black holes, and the fiery birth of stars—or by the intricate dance of subatomic quarks and invisible forces—no parlor trick will ever convince them of God's infinite Power!
 
-God used His Free Will to implement His decisions in measurable proportions, called natural laws, so that humans could discover and take advantage of these laws for the benefit of humanity. God has the Power to give any Command, but He "Willed" that His Command be actualized in "fixed laws".
+The Creator's grand architecture is anchored in absolute Wisdom. When He endowed creation with specific attributes, He did so with perfect foresight. He designed fire with the intrinsic property to burn; He has no need to revise His original blueprint by suddenly robbing fire of its nature. Only flawed human engineers must issue patches, updates, and mid-course corrections, because human knowledge is inherently incomplete. 
+
+Through His sovereign Free Will, God chose to actualize His decrees in precise, measurable proportions — what we call the laws of nature.
+
+He established this unwavering structure so that humanity could observe, comprehend, and harness these reliable principles for the flourishing of civilization. While God possesses the absolute power to command anything into being, He intentionally *willed* that His Divine Command be realized through fixed, dependable laws.
 
 > @{q-trans-en} ...  And Allah's _'Amr'_ (Command / Will) has been firmly decreed [in fixed measurements]. @ref{Quran 33:38}
 
