@@ -29,6 +29,10 @@ jobs:
       - name: Render Quarto Project
         run: quarto render
 
+      - name: Cache-bust styles.css
+        run: |
+          find _site -name '*.html' -exec sed -i "s|styles\.css\"|styles.css?v=${GITHUB_SHA::7}\"|g" {} +
+
       - name: Deploy to gh-pages branch
         if: github.event_name != 'pull_request'
         uses: peaceiris/actions-gh-pages@v4
